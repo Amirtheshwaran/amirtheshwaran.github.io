@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amirtheshwaran Navaneethakrishnan, Software Engineer. MS CS at UNC Charlotte. Full-stack, ML systems, backend.">
+  <meta property="og:title" content="Amirtheshwaran · Software Engineer">
+  <meta property="og:description" content="MS CS at UNC Charlotte. Full-stack, ML, backend. Targeting SDE roles.">
+  <title>Amirtheshwaran · Software Engineer</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+
+  <!-- 3D world -->
+  <canvas id="webgl" aria-hidden="true"></canvas>
+
+  <!-- Cursor -->
+  <div id="cursor" aria-hidden="true"></div>
+
+  <!-- Ambient glows -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+  </div>
+
+  <!-- ── Navigation ── -->
+  <nav id="nav" role="navigation" aria-label="Main">
+    <a href="#hero" class="nav-logo" aria-label="Back to top">AN</a>
+    <ul class="nav-links">
+      <li><a href="#about"      data-section="about">About</a></li>
+      <li><a href="#stack"      data-section="stack">Stack</a></li>
+      <li><a href="#experience" data-section="experience">Work</a></li>
+      <li><a href="#projects"   data-section="projects">Projects</a></li>
+      <li><a href="mailto:amirthesh14@gmail.com" class="nav-cta">Hire Me →</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── 01 HERO — panels assemble into the monolith ── -->
+  <section id="hero" class="scene" aria-label="Introduction">
+    <div class="hero-inner">
+      <p class="eyebrow hero-eyebrow">Software Engineer · Available for SDE Roles</p>
+
+      <div class="hero-name-block">
+        <h1 class="hero-name-line" id="hero-line-1">AMIRTHESHWARAN</h1>
+      </div>
+
+      <div class="hero-divider" id="hero-divider" aria-hidden="true"></div>
+
+      <div class="hero-sub" id="hero-sub">
+        <span>MS Computer Science · UNC Charlotte</span>
+        <span>Full-Stack · ML Systems · Backend</span>
+      </div>
+
+      <div class="hero-ctas" id="hero-ctas">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact"  class="btn-secondary">Get in Touch ↗</a>
+      </div>
+    </div>
+
+    <div class="hero-footer" id="hero-footer" aria-hidden="true">
+      <span class="hero-counter">01 / 06</span>
+      <span class="hero-scroll">SCROLL <span class="hero-scroll-line"></span></span>
+    </div>
+  </section>
+
+  <!-- ── 02 ABOUT — the monolith splits open ── -->
+  <section id="about" class="scene scene-tall" aria-label="About">
+    <div class="scene-inner">
+      <div class="scene-content about-wrap">
+        <div class="overlay-card about-card">
+          <p class="eyebrow">02 · About</p>
+          <h2 class="about-heading">Builder. Systems thinker.<br>Ships things.</h2>
+          <p class="about-body">
+            MS Computer Science at UNC Charlotte (May 2027). BTech in AI &amp; ML from SRM IST Chennai, First Class with Distinction.
+            Built 15+ projects spanning full-stack web, ML pipelines, computer vision, and mobile apps.
+            Interned as a backend developer building Python APIs and integrating third-party services.
+            Currently targeting SDE roles at high-impact companies.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-num-row">
+                <span class="stat-num" data-target="15">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Projects shipped</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num-row">
+                <span class="stat-num" data-target="2">0</span>
+              </div>
+              <span class="stat-label">Degrees (BTech AI/ML · MS CS)</span>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num-row">
+                <span class="stat-num" data-target="4">0</span><span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Years building</span>
+            </div>
+          </div>
+          <div class="about-edu">
+            <div class="edu-item">
+              <span class="edu-degree">MS Computer Science</span>
+              <span class="edu-school">UNC Charlotte · Aug 2025 – May 2027</span>
+            </div>
+            <div class="edu-item">
+              <span class="edu-degree">BTech AI &amp; ML, First Class with Distinction</span>
+              <span class="edu-school">SRM IST Chennai · Sep 2021 – May 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 03 STACK — panels scatter into floating shelves ── -->
+  <section id="stack" class="scene scene-tall" aria-label="Tech stack">
+    <div class="scene-inner">
+      <div class="scene-content">
+        <div class="overlay-card stack-card">
+          <p class="eyebrow">03 · Stack</p>
+          <h2 class="section-heading">What I work with</h2>
+          <div class="stack-grid">
+            <div class="stack-row">
+              <span class="stack-category">Languages</span>
+              <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">Go</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">Java</span>
+                <span class="chip">C#</span>
+              </div>
+            </div>
+            <div class="stack-row">
+              <span class="stack-category">Frontend</span>
+              <div class="chips">
+                <span class="chip">React</span>
+                <span class="chip">Next.js</span>
+                <span class="chip">React Native</span>
+                <span class="chip">Vite</span>
+                <span class="chip">HTML / CSS</span>
+              </div>
+            </div>
+            <div class="stack-row">
+              <span class="stack-category">Backend</span>
+              <div class="chips">
+                <span class="chip">Node.js</span>
+                <span class="chip">FastAPI</span>
+                <span class="chip">Express</span>
+                <span class="chip">REST APIs</span>
+              </div>
+            </div>
+            <div class="stack-row">
+              <span class="stack-category">Data</span>
+              <div class="chips">
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Firebase</span>
+                <span class="chip">Supabase</span>
+                <span class="chip">Redis</span>
+                <span class="chip">MongoDB</span>
+              </div>
+            </div>
+            <div class="stack-row">
+              <span class="stack-category">Infra</span>
+              <div class="chips">
+                <span class="chip">AWS</span>
+                <span class="chip">Docker</span>
+                <span class="chip">Netlify</span>
+                <span class="chip">Git</span>
+                <span class="chip">Linux</span>
+              </div>
+            </div>
+            <div class="stack-row">
+              <span class="stack-category">AI / ML</span>
+              <div class="chips">
+                <span class="chip">TensorFlow</span>
+                <span class="chip">OpenCV</span>
+                <span class="chip">Scikit-learn</span>
+                <span class="chip">Gemini API</span>
+                <span class="chip">Groq</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04 EXPERIENCE — panels stream into a helix ── -->
+  <section id="experience" class="scene scene-tall" aria-label="Work experience">
+    <div class="scene-inner">
+      <div class="scene-content">
+        <div class="overlay-card exp-card">
+          <p class="eyebrow">04 · Experience</p>
+          <h2 class="section-heading">Where I've worked</h2>
+          <div class="timeline">
+            <div class="timeline-line" aria-hidden="true"></div>
+
+            <article class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="tl-date">Jul 2024 – Nov 2024 · Remote, India</div>
+              <h3 class="tl-role">Junior Backend Developer Intern</h3>
+              <div class="tl-company">Drata IT Solutions</div>
+              <ul class="tl-bullets">
+                <li>Built 8 Python API endpoints for internal application features.</li>
+                <li>Integrated 3 third-party APIs, resolved 20+ backend issues.</li>
+                <li>Worked across the full request lifecycle: validation, error handling, documentation.</li>
+                <li>Collaborated with frontend team on 5+ feature integrations; participated in code review.</li>
+              </ul>
+              <div class="tl-tags">
+                <span class="chip">Python</span>
+                <span class="chip">Node.js</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">REST APIs</span>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="tl-date">Jan 2026 – Present</div>
+              <h3 class="tl-role">Satellite Facilities Supervisor</h3>
+              <div class="tl-company">UNC Charlotte</div>
+              <p class="tl-note">Team operations, incident management, shift documentation.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05 PROJECTS — the helix unwinds into four screens ── -->
+  <section id="projects" class="scene" aria-label="Projects">
+    <div class="scene-inner">
+      <div class="reveal">
+        <p class="eyebrow">05 · Projects</p>
+        <h2 class="section-heading">Selected work</h2>
+        <p class="projects-sub">4 featured · 11 more below</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="proj-card proj-featured reveal">
+          <div class="proj-header">
+            <div class="proj-tags-row">
+              <span class="proj-tag">Full-Stack</span>
+              <span class="proj-tag">AI</span>
+              <span class="proj-tag">Self-Hosted</span>
+            </div>
+            <span class="proj-date">Jun 2026 – Present</span>
+          </div>
+          <h3 class="proj-title">MeetMind</h3>
+          <p class="proj-desc">Self-hosted meeting recorder, transcription engine, and action item tracker. Records in-browser, generates summaries, extracts decisions. Zero-config local mode ships with a local JSON database and mock pipelines. Plugs into Supabase, Groq Whisper, and Gemini Flash.</p>
+          <div class="proj-footer">
+            <div class="proj-stack">Supabase · Groq Whisper · Gemini Flash · Local JSON</div>
+            <a href="https://github.com/Amirtheshwaran/meetmind" target="_blank" rel="noopener" class="proj-link" aria-label="MeetMind on GitHub">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="proj-card reveal">
+          <div class="proj-header">
+            <div class="proj-tags-row">
+              <span class="proj-tag">Mobile</span>
+              <span class="proj-tag">Real-Time</span>
+            </div>
+            <span class="proj-date">Dec 2024 – Mar 2025</span>
+          </div>
+          <h3 class="proj-title">AnonU</h3>
+          <p class="proj-desc">Anonymous campus microblogging platform for verified campus communities. React Native + Firebase with real-time Firestore updates, anonymous authentication, privacy-conscious posting, and moderation workflows. No custom server infrastructure.</p>
+          <div class="proj-footer">
+            <div class="proj-stack">React Native · Firebase · Firestore</div>
+            <a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="proj-link" aria-label="AnonU on GitHub">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="proj-card reveal">
+          <div class="proj-header">
+            <div class="proj-tags-row">
+              <span class="proj-tag">Computer Vision</span>
+              <span class="proj-tag">ML</span>
+            </div>
+            <span class="proj-date">Jan 2026 – May 2026</span>
+          </div>
+          <h3 class="proj-title">Gait Re-ID System</h3>
+          <p class="proj-desc">Computer vision system for re-identifying individuals using gait-based video features. Processes gallery and query video inputs to support person re-identification workflows. Deployed in a UNC Charlotte lab setting after a Computer Communications course presentation.</p>
+          <div class="proj-footer">
+            <div class="proj-stack">Python · OpenCV · ML Pipeline · Video Processing</div>
+            <a href="https://github.com/PritomKumarPaul/gait_tracking" target="_blank" rel="noopener" class="proj-link" aria-label="Gait Re-ID on GitHub">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="proj-card reveal">
+          <div class="proj-header">
+            <div class="proj-tags-row">
+              <span class="proj-tag">Bioinformatics</span>
+              <span class="proj-tag">Python</span>
+            </div>
+            <span class="proj-date">Jun 2024 – Dec 2024</span>
+          </div>
+          <h3 class="proj-title">DNA Sequence Error Detection</h3>
+          <p class="proj-desc">Bioinformatics pipeline using PySAM and BWA-aligned BAM files. Detects sequencing mismatches and indels, applies base-quality filtering. Reduced observed error rate from 0.000717 → 0.000626 after QC filtering. Visual summaries for mismatch, indel, and read-quality analysis.</p>
+          <div class="proj-footer">
+            <div class="proj-stack">Python · PySAM · BWA · Bioinformatics</div>
+            <a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="proj-link" aria-label="DNA project on GitHub">GitHub ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <button class="show-more-btn reveal" id="show-more-btn" aria-expanded="false">
+        + Show 11 more projects
+      </button>
+
+      <div class="projects-list" id="projects-list" aria-hidden="true">
+        <table class="proj-table">
+          <tbody>
+            <tr>
+              <td class="pt-name">UREC Shift Report Simulator</td>
+              <td class="pt-stack">React · Vite · Gemini AI · Netlify</td>
+              <td class="pt-year">2026</td>
+              <td><a href="https://github.com/Amirtheshwaran/urec-shift-report-simulator" target="_blank" rel="noopener" class="pt-link" aria-label="UREC project">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">Dental Demand Platform</td>
+              <td class="pt-stack">Streamlit · ML · CDC Public Data</td>
+              <td class="pt-year">2026</td>
+              <td><a href="https://github.com/Amirtheshwaran/Dental_Demand_Platform" target="_blank" rel="noopener" class="pt-link" aria-label="Dental platform project">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">Untitled Ski Game</td>
+              <td class="pt-stack">Unity · Physics · Momentum-based movement</td>
+              <td class="pt-year">2026</td>
+              <td><a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="pt-link">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">Silk Lounge</td>
+              <td class="pt-stack">GameMaker Studio · 2D Platformer</td>
+              <td class="pt-year">2025</td>
+              <td><a href="https://github.com/Amirtheshwaran/Silk-Lounge" target="_blank" rel="noopener" class="pt-link">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">Marionette's Ascent</td>
+              <td class="pt-stack">GameMaker Studio · Enemy AI · Shaders · Particles</td>
+              <td class="pt-year">2025</td>
+              <td><a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="pt-link">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">Image Classification System</td>
+              <td class="pt-stack">Python · Deep Learning · Computer Vision</td>
+              <td class="pt-year">2023</td>
+              <td><a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="pt-link">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">Drug Discovery ML</td>
+              <td class="pt-stack">Python · CHEMBL · pIC50 · Bioactivity</td>
+              <td class="pt-year">2023</td>
+              <td><a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="pt-link">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">Automobile Sales System</td>
+              <td class="pt-stack">Full-Stack · DBMS · Sales automation</td>
+              <td class="pt-year">2023</td>
+              <td><a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="pt-link">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">SOHO Network Design</td>
+              <td class="pt-stack">Cisco Packet Tracer · Networking · Security</td>
+              <td class="pt-year">2023</td>
+              <td><a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="pt-link">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">LDR Automated Streetlights</td>
+              <td class="pt-stack">Embedded Systems · Sensor Technology</td>
+              <td class="pt-year">2022</td>
+              <td><a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="pt-link">↗</a></td>
+            </tr>
+            <tr>
+              <td class="pt-name">Email Spam Detection</td>
+              <td class="pt-stack">Python · ML · NLP · Classification</td>
+              <td class="pt-year">2020</td>
+              <td><a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="pt-link">↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 06 CONTACT — everything collapses into the beacon ── -->
+  <section id="contact" class="scene" aria-label="Contact">
+    <div class="scene-inner">
+      <div class="scene-content">
+        <p class="eyebrow">06 · Contact</p>
+        <h2 class="section-heading contact-heading">Let's build<br>something.</h2>
+        <p class="contact-sub">Open to SDE roles. Available May 2027, or sooner for remote.</p>
+
+        <div class="contact-email-row">
+          <button class="contact-email" id="copy-email" aria-label="Copy email address">
+            amirthesh14@gmail.com
+          </button>
+          <span class="copy-confirm" id="copy-confirm" aria-live="polite">Copied</span>
+        </div>
+
+        <div class="contact-links">
+          <a href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener" class="contact-link">
+            <span class="cl-label">GitHub ↗</span>
+            <span class="cl-sub">github.com/Amirtheshwaran</span>
+          </a>
+          <a href="https://www.linkedin.com/in/amirtheshn/" target="_blank" rel="noopener" class="contact-link">
+            <span class="cl-label">LinkedIn ↗</span>
+            <span class="cl-sub">in/amirtheshn</span>
+          </a>
+          <a href="mailto:amirthesh14@gmail.com" class="contact-link">
+            <span class="cl-label">Email ↗</span>
+            <span class="cl-sub">amirthesh14@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="contact-footer">
+          <span>© 2026 Amirtheshwaran Navaneethakrishnan</span>
+          <span>Built with vanilla JS, Three.js &amp; GSAP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GSAP (classic scripts run before modules) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
