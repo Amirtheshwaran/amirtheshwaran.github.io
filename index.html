@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AMIR — Amirtheshwaran Navaneethakrishnan</title>
 <meta name="description" content="Amirtheshwaran Navaneethakrishnan — software engineer. MS CS at UNC Charlotte. Full-stack, ML systems, games.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2303060d'/%3E%3Cpath d='M14 52 L32 12 L50 52 M21.5 36 H42.5' stroke='%236ea8ff' stroke-width='4' fill='none'/%3E%3C/svg%3E">
 <style>
 /* ================= tokens ================= */
 :root{
@@ -94,6 +95,9 @@ html.touch #spacer{display:none}
   #nav{padding:16px 16px}
   .nav-cta{padding:7px 13px;font-size:10px}
 }
+@media (max-width:560px){
+  .nav-links{display:none}
+}
 
 /* ================= quaternion panel ================= */
 #qpanel{
@@ -168,6 +172,7 @@ html.touch #spacer{display:none}
   animation:scrollpulse 1.8s ease-in-out infinite;
 }
 @keyframes scrollpulse{0%,100%{opacity:.15;transform:scaleY(.6)}50%{opacity:.9;transform:scaleY(1)}}
+@media (max-width:560px){.hero-scroll{display:none}}
 .hero-coord{
   position:absolute;right:28px;bottom:30px;
   font-size:10px;letter-spacing:.18em;color:var(--faint);text-align:right;
@@ -290,6 +295,13 @@ html.touch #works .works-pin{position:sticky;top:0}
   font-style:normal;font-size:9.5px;letter-spacing:.06em;
   border:1px solid var(--hair);padding:2.5px 8px;color:var(--dim);
 }
+.wcard-link{
+  align-self:flex-start;margin-top:2px;
+  font-size:10px;letter-spacing:.22em;color:var(--dim);
+  border-bottom:1px solid var(--hair);padding-bottom:2px;
+  transition:color .3s,border-color .3s;
+}
+.wcard-link:hover{color:#fff;border-color:#fff}
 .more-works{
   position:absolute;right:26px;bottom:26px;z-index:5;
   font-size:11px;letter-spacing:.22em;color:var(--dim);
@@ -453,6 +465,7 @@ html.touch #works .works-pin{position:sticky;top:0}
                 <h3 class="wcard-title">ANONU</h3>
                 <p class="wcard-desc">Anonymous social app for campus. Verified-school feed, real-time posts, moderation tools. Running live with 50–100 real users.</p>
                 <div class="wcard-tags"><i>flutter</i><i>riverpod</i><i>firestore</i></div>
+                <a class="wcard-link" href="https://github.com/Amirtheshwaran/anonu-remake" target="_blank" rel="noopener">OPEN ↗</a>
               </div>
             </div>
           </article>
@@ -489,6 +502,7 @@ html.touch #works .works-pin{position:sticky;top:0}
                 <h3 class="wcard-title">RAPTOR GAMES</h3>
                 <p class="wcard-desc">Free online game portal. Static site, instant loads, no accounts, no ads — just games that work in the browser.</p>
                 <div class="wcard-tags"><i>static_web</i><i>github_pages</i></div>
+                <a class="wcard-link" href="https://amirtheshwaran.github.io/Raptor-Games-Prototype/" target="_blank" rel="noopener">OPEN ↗</a>
               </div>
             </div>
           </article>
@@ -501,6 +515,7 @@ html.touch #works .works-pin{position:sticky;top:0}
                 <h3 class="wcard-title">DENTAL DEMAND</h3>
                 <p class="wcard-desc">Forecasts dental-care demand from CDC public datasets — an ML model behind a full-stack dashboard for spotting underserved regions.</p>
                 <div class="wcard-tags"><i>full_stack</i></div>
+                <a class="wcard-link" href="https://github.com/Amirtheshwaran/Dental_Demand_Platform" target="_blank" rel="noopener">OPEN ↗</a>
               </div>
             </div>
           </article>
@@ -974,6 +989,7 @@ function setRadius(){ RADIUS = vw < 680 ? 300 : 400; }
 setRadius();
 
 stage.addEventListener("pointerdown", function(e){
+  if (e.target.closest(".wcard-link")) return;
   dragging = true; dragX = e.clientX; dragVel = 0;
   stage.classList.add("dragging");
   stage.setPointerCapture(e.pointerId);
