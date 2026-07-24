@@ -3,9 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amirthesh | Software Engineer</title>
-<meta name="description" content="Portfolio of Amirtheshwaran Navaneethakrishnan, a software engineer doing his MS CS at UNC Charlotte. Full stack, ML systems and games.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23040d0b'/%3E%3Cpath d='M14 52 L32 12 L50 52 M21.5 36 H42.5' stroke='%238fe3c8' stroke-width='4' fill='none'/%3E%3C/svg%3E">
+<title>Amirthesh | Software Engineer, MS CS @ UNC Charlotte</title>
+<meta name="description" content="Portfolio of Amirtheshwaran Navaneethakrishnan (Amir), a software engineer pursuing his MS in Computer Science at UNC Charlotte. Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS.">
+<meta name="theme-color" content="#0b101b">
+<link rel="canonical" href="https://amirtheshwaran.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070c16'/%3E%3Cpath d='M14 52 L32 12 L50 52 M21.5 36 H42.5' stroke='%239ecbf0' stroke-width='4' fill='none'/%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amirtheshwaran.github.io/">
+<meta property="og:title" content="Amirthesh | Software Engineer, MS CS @ UNC Charlotte">
+<meta property="og:description" content="Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS. Currently an MS CS student at UNC Charlotte, open to SDE roles.">
+<meta property="og:image" content="https://amirtheshwaran.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amirthesh | Software Engineer, MS CS @ UNC Charlotte">
+<meta name="twitter:description" content="Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS.">
+<meta name="twitter:image" content="https://amirtheshwaran.github.io/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Amirtheshwaran Navaneethakrishnan",
+  "alternateName": "Amir",
+  "url": "https://amirtheshwaran.github.io/",
+  "jobTitle": "Software Engineer",
+  "email": "mailto:amirthesh14@gmail.com",
+  "sameAs": [
+    "https://github.com/Amirtheshwaran",
+    "https://www.linkedin.com/in/amirtheshn/"
+  ],
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "UNC Charlotte" },
+    { "@type": "CollegeOrUniversity", "name": "SRM Institute of Science and Technology" }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -13,23 +49,24 @@
 /* ================= tokens ================= */
 :root{
   --ink:#ffffff;
-  --dim:#8b94a3;
-  --faint:#4a5160;
-  --blue:#2b9c7e;
-  --blue-glow:#8fe3c8;
-  --hair:rgba(255,255,255,.14);
-  --grid:rgba(143,227,200,.05);
-  --grid-major:rgba(143,227,200,.09);
+  --dim:#9198a3;
+  --faint:#55595f;
+  --blue:#4d7fc0;
+  --blue-glow:#9ecbf0;
+  --hair:rgba(255,255,255,.12);
   --mono:"Cascadia Mono","Cascadia Code",ui-monospace,Consolas,"SF Mono",Menlo,monospace;
   --disp:"Unbounded","Arial Narrow",sans-serif;
   --jp:"Noto Sans JP",sans-serif;
   --gold:#e8c87a;
 }
+@media (prefers-reduced-motion: reduce){
+  .hero-scroll::after{ animation:none; opacity:.5; }
+}
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:#000}
+html{background:#0b101b}
 html,body{height:100%}
 body{
-  background:#000;color:var(--ink);
+  background:#0b101b;color:var(--ink);
   font-family:var(--mono);font-size:13px;line-height:1.7;
   letter-spacing:.02em;
   overflow-x:hidden;
@@ -43,31 +80,21 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:1px solid var(--blue-glow);outline-offset:3px}
 
 /* ================= fixed layers ================= */
-#bg{position:fixed;inset:0;z-index:0;display:block}
-#grid-overlay{
-  position:fixed;inset:0;z-index:1;pointer-events:none;
-  background:
-    repeating-linear-gradient(0deg,var(--grid) 0 1px,transparent 1px 24px),
-    repeating-linear-gradient(90deg,var(--grid) 0 1px,transparent 1px 24px),
-    repeating-linear-gradient(0deg,var(--grid-major) 0 1px,transparent 1px 120px),
-    repeating-linear-gradient(90deg,var(--grid-major) 0 1px,transparent 1px 120px);
-}
-#mono-flash{
-  position:fixed;top:50%;left:50%;z-index:2;pointer-events:none;
-  width:min(56vmin,520px);height:min(56vmin,520px);
-  transform:translate(-50%,-50%);
-  opacity:0;transition:opacity 1.2s ease;
-}
-#mono-flash.show{opacity:.075}
-#mono-flash path,#mono-flash line,#mono-flash circle{
-  fill:none;stroke:#fff;stroke-width:.7;vector-effect:non-scaling-stroke;
-}
 
 /* ================= virtual scroll ================= */
 #page{position:fixed;top:0;left:0;width:100%;z-index:10;will-change:transform}
 html.touch #page{position:static;will-change:auto}
 #spacer{width:1px}
 html.touch #spacer{display:none}
+
+/* ================= intro — waterdrop ================= */
+#intro{
+  position:fixed;inset:0;z-index:100;
+  background:#0b101b;
+  display:flex;align-items:center;justify-content:center;
+}
+#intro svg{width:min(72vmin,540px);overflow:visible}
+#intro.gone{display:none}
 
 /* ================= nav ================= */
 #nav{
@@ -78,7 +105,7 @@ html.touch #spacer{display:none}
 }
 .nav-logo{
   font-family:var(--disp);font-weight:800;font-size:13px;letter-spacing:.24em;
-  line-height:1;padding-top:2px;color:var(--blue-glow);
+  line-height:1;padding-top:2px;color:var(--ink);
 }
 .nav-links{
   position:absolute;left:50%;transform:translateX(-50%);
@@ -86,7 +113,7 @@ html.touch #spacer{display:none}
   font-size:12px;letter-spacing:.18em;
 }
 .nav-links a{color:var(--dim);transition:color .25s}
-.nav-links a:hover{color:#fff}
+.nav-links a:hover{color:var(--blue-glow)}
 .nav-links a::before{content:"/ ";color:var(--faint)}
 .nav-cta{
   display:inline-block;border:1px solid var(--hair);border-radius:99px;
@@ -104,62 +131,28 @@ html.touch #spacer{display:none}
   .nav-links{display:none}
 }
 
-/* ================= quaternion panel ================= */
-#qpanel{
-  position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:55;
-  width:172px;border:1px solid var(--hair);
-  background:rgba(0,0,0,.55);backdrop-filter:blur(6px);
-  font-size:10px;letter-spacing:.08em;color:var(--dim);
-  padding:10px 12px 12px;
-  transition:opacity .5s;
-}
-#qpanel .qp-title{
-  color:#fff;font-size:10px;letter-spacing:.14em;
-  border-bottom:1px solid var(--hair);
-  padding-bottom:7px;margin-bottom:9px;
-  display:flex;justify-content:space-between;align-items:center;
-}
-#qpanel .qp-dot{width:5px;height:5px;border-radius:50%;background:var(--blue-glow);box-shadow:0 0 6px var(--blue-glow)}
-#qpanel .qp-row{display:flex;justify-content:space-between;padding:1.5px 0}
-#qpanel .qp-row b{color:var(--faint);font-weight:400}
-#qpanel .qp-row span{color:#dfe5ef;font-variant-numeric:tabular-nums}
-#gimbal{display:block;margin:9px auto 4px}
-#qreset{
-  display:block;width:100%;margin-top:8px;
-  border:1px solid var(--hair);padding:6px 0;
-  font-size:10px;letter-spacing:.2em;color:var(--dim);
-  transition:all .25s;will-change:transform;
-}
-#qreset:hover{border-color:var(--blue-glow);color:#fff}
-@media (max-width:1100px){#qpanel{display:none}}
-
-/* ================= intro ================= */
-#intro{
-  position:fixed;inset:0;z-index:100;background:#000;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:34px;cursor:pointer;
-  transition:opacity .55s ease,visibility .55s;
-}
-#intro.done{opacity:0;visibility:hidden}
-#intro svg{width:min(46vmin,380px);height:min(46vmin,380px);overflow:visible}
-#intro path,#intro line,#intro circle{
-  fill:none;stroke:#fff;stroke-width:1;vector-effect:non-scaling-stroke;
-}
-#intro .fill-tri{stroke:none;fill:#fff;opacity:0;transition:opacity .32s ease}
-#intro.filled .fill-tri{opacity:1}
-#intro.filled .draw{stroke:var(--blue-glow)}
-#intro-tag{
-  font-size:10px;letter-spacing:.34em;color:var(--dim);
-  text-transform:lowercase;opacity:0;transition:opacity 1s ease .2s;
-}
-#intro.tagged #intro-tag{opacity:1}
-#intro-skip{
-  position:absolute;bottom:26px;font-size:9px;letter-spacing:.3em;
-  color:var(--faint);
-}
-
 /* ================= hero ================= */
-#hero{position:relative;height:100vh}
+#hero{position:relative;height:100vh;overflow:hidden}
+.hero-art{
+  position:absolute;top:0;right:0;bottom:0;width:min(64vw,780px);
+  background:url("art-9729298.png") center/cover no-repeat;
+  opacity:.88;pointer-events:none;
+  -webkit-mask-image:radial-gradient(78% 88% at 66% 46%,#000 52%,transparent 97%);
+  mask-image:radial-gradient(78% 88% at 66% 46%,#000 52%,transparent 97%);
+}
+@media (max-width:760px){
+  .hero-art{width:100vw;opacity:.55}
+}
+.hero-name{
+  position:absolute;top:50%;left:50%;z-index:2;
+  font-family:var(--disp);font-weight:800;
+  font-size:clamp(2.75rem,10vw,8.5rem);
+  letter-spacing:.03em;line-height:1;color:var(--ink);
+  white-space:nowrap;pointer-events:none;
+}
+@media (max-width:560px){
+  .hero-name{font-size:clamp(2.2rem,13vw,3.4rem)}
+}
 .hero-meta{
   position:absolute;left:28px;bottom:30px;z-index:12;
   font-size:10px;letter-spacing:.22em;color:var(--dim);
@@ -237,7 +230,11 @@ html.touch #works .works-pin{position:sticky;top:0}
   cursor:grab;touch-action:pan-y;
 }
 .carousel-stage.dragging{cursor:grabbing}
-#carousel{position:relative;width:0;height:0;transform-style:preserve-3d}
+#carousel{
+  position:relative;width:0;height:0;transform-style:preserve-3d;
+  /* resting lean (no-JS fallback) — JS drives a live floating tilt */
+  transform:rotateX(8deg) rotateZ(-5deg);
+}
 .wcard{
   position:absolute;left:-160px;top:-215px;width:320px;height:430px;
   transform-style:preserve-3d;
@@ -245,21 +242,22 @@ html.touch #works .works-pin{position:sticky;top:0}
 }
 .wcard-tilt{
   width:100%;height:100%;
-  border:1px solid var(--hair);background:rgba(4,6,12,.88);
+  border:1px solid var(--hair);background:rgba(6,10,20,.9);
   display:flex;flex-direction:column;
   transition:border-color .4s;
   will-change:transform;
 }
-.wcard.center .wcard-tilt{border-color:rgba(255,255,255,.45)}
+.wcard.center .wcard-tilt{border-color:rgba(158,203,240,.55)}
 .wcard-prev{
-  height:200px;position:relative;overflow:hidden;
+  height:185px;position:relative;overflow:hidden;
   border-bottom:1px solid var(--hair);
-  background:#03060d;
+  background:#0a1220;
 }
 .wcard-prev::after{
   content:attr(data-glyph);
   position:absolute;right:12px;bottom:6px;
-  font-size:11px;letter-spacing:.2em;color:var(--faint);
+  font-size:11px;letter-spacing:.2em;color:#eef4fa;
+  text-shadow:0 1px 5px rgba(0,0,0,.75);
 }
 .prev-anonu{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230a1526'/%3E%3Cstop offset='0.65' stop-color='%23123037'/%3E%3Cstop offset='1' stop-color='%230a2027'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23bg)'/%3E%3Ccircle cx='300' cy='66' r='44' fill='%238fe3c8' opacity='.12'/%3E%3Ccircle cx='300' cy='66' r='30' fill='%23eef7f2'/%3E%3Cg fill='%23eef7f2'%3E%3Ccircle cx='44' cy='34' r='1.4'/%3E%3Ccircle cx='96' cy='58' r='1'/%3E%3Ccircle cx='150' cy='30' r='1.2'/%3E%3Ccircle cx='226' cy='48' r='1'/%3E%3Ccircle cx='360' cy='140' r='1.2'/%3E%3Ccircle cx='60' cy='120' r='1'/%3E%3Ccircle cx='190' cy='90' r='1.1'/%3E%3C/g%3E%3Cpath d='M0 250 L0 194 Q60 176 120 188 Q200 200 268 186 Q340 174 400 190 L400 250 Z' fill='%230d2622'/%3E%3Cg fill='%23081a17'%3E%3Cpath d='M60 192 L60 168 L74 154 L88 168 L88 190 Z'/%3E%3Cpath d='M96 190 L96 172 L108 160 L120 172 L120 192 Z'/%3E%3Cpath d='M250 186 L250 164 L262 150 L274 164 L274 184 Z'/%3E%3Cpath d='M282 184 L282 168 L292 158 L302 168 L302 184 Z'/%3E%3C/g%3E%3Cg fill='%23e8c87a' opacity='.9'%3E%3Crect x='68' y='170' width='4' height='5'/%3E%3Crect x='104' y='174' width='4' height='5'/%3E%3Crect x='258' y='166' width='4' height='5'/%3E%3Crect x='288' y='170' width='4' height='4'/%3E%3C/g%3E%3Cpath d='M140 135 l1.4000000000000001 3.5999999999999996 l3.5999999999999996 1.4000000000000001 l-3.5999999999999996 1.4000000000000001 l-1.4000000000000001 3.5999999999999996 l-1.4000000000000001 -3.5999999999999996 l-3.5999999999999996 -1.4000000000000001 l3.5999999999999996 -1.4000000000000001 Z' fill='%238fe3c8' opacity='0.8'/%3E%3Cpath d='M330 116 l1.12 2.88 l2.88 1.12 l-2.88 1.12 l-1.12 2.88 l-1.12 -2.88 l-2.88 -1.12 l2.88 -1.12 Z' fill='%238fe3c8' opacity='0.6'/%3E%3Cpath d='M90 92.6 l0.9520000000000001 2.448 l2.448 0.9520000000000001 l-2.448 0.9520000000000001 l-0.9520000000000001 2.448 l-0.9520000000000001 -2.448 l-2.448 -0.9520000000000001 l2.448 -0.9520000000000001 Z' fill='%238fe3c8' opacity='0.7'/%3E%3Cpath d='M230 127 l0.8400000000000001 2.16 l2.16 0.8400000000000001 l-2.16 0.8400000000000001 l-0.8400000000000001 2.16 l-0.8400000000000001 -2.16 l-2.16 -0.8400000000000001 l2.16 -0.8400000000000001 Z' fill='%238fe3c8' opacity='0.5'/%3E%3C/svg%3E");
@@ -285,6 +283,19 @@ html.touch #works .works-pin{position:sticky;top:0}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%233a2a4a'/%3E%3Cstop offset='0.55' stop-color='%23b06a52'/%3E%3Cstop offset='1' stop-color='%23e8c87a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='250' fill='url(%23bg)'/%3E%3Cg fill='%23e8c87a' opacity='.22'%3E%3Cpath d='M200 208 L60 -40 L140 -60 Z'/%3E%3Cpath d='M200 208 L260 -60 L340 -40 Z'/%3E%3Cpath d='M200 208 L-60 60 L-60 -10 Z'/%3E%3Cpath d='M200 208 L460 -10 L460 60 Z'/%3E%3C/g%3E%3Ccircle cx='200' cy='208' r='46' fill='%23f4e2b0'/%3E%3Ccircle cx='200' cy='208' r='60' fill='none' stroke='%23f4e2b0' stroke-width='2' opacity='.5'/%3E%3Cpath d='M0 250 L0 208 Q100 194 200 206 Q300 218 400 202 L400 250 Z' fill='%231d3a30'/%3E%3Cg stroke='%2312271f' stroke-width='2.4' stroke-linecap='round'%3E%3Cline x1='52' y1='226' x2='52' y2='208'/%3E%3Cline x1='60' y1='228' x2='60' y2='214'/%3E%3Cline x1='344' y1='222' x2='344' y2='206'/%3E%3C/g%3E%3Cg%3E%3Cline x1='312' y1='222' x2='312' y2='176' stroke='%2312271f' stroke-width='3'/%3E%3Cpath d='M312 178 L338 184 L312 192 Z' fill='%23e8c87a'/%3E%3C/g%3E%3Cpath d='M120 86 l1.12 2.88 l2.88 1.12 l-2.88 1.12 l-1.12 2.88 l-1.12 -2.88 l-2.88 -1.12 l2.88 -1.12 Z' fill='%23e8c87a' opacity='0.7'/%3E%3Cpath d='M300 106.8 l0.8960000000000001 2.304 l2.304 0.8960000000000001 l-2.304 0.8960000000000001 l-0.8960000000000001 2.304 l-0.8960000000000001 -2.304 l-2.304 -0.8960000000000001 l2.304 -0.8960000000000001 Z' fill='%23f4e2b0' opacity='0.6'/%3E%3C/svg%3E");
   background-size:cover;background-position:center;
 }
+/* card art — andsproject anime series (Pixabay, free license), sized past
+   the frame so the hover tilt can parallax inside each print */
+.prev-anonu{background-image:url("art-10137684.png");background-position:78% 52%}
+.prev-meetmind{background-image:url("art-10137688.png");background-position:55% 55%}
+.prev-gait{background-image:url("art-10137687.png");background-position:72% 52%}
+.prev-dna{background-image:url("girl-art.png");background-position:50% 42%}
+.prev-dental{background-image:url("art-9729298.png");background-position:50% 30%}
+.prev-urec{background-image:url("art-8435329.png");background-position:50% 74%}
+.prev-anonu,.prev-meetmind,.prev-gait,.prev-dna,.prev-dental,.prev-urec{
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-color:#0e1522;
+}
 .wcard-body{flex:1;display:flex;flex-direction:column;padding:16px 16px 14px;gap:8px}
 .wcard-date{font-size:10px;letter-spacing:.26em;color:var(--faint)}
 .wcard-title{
@@ -292,7 +303,10 @@ html.touch #works .works-pin{position:sticky;top:0}
   font-size:17px;letter-spacing:.08em;line-height:1.25;
 }
 a.wcard-tilt{color:inherit;cursor:pointer}
-.wcard-desc{font-size:11px;line-height:1.6;color:var(--dim);flex:1}
+.wcard-desc{
+  font-size:10.5px;line-height:1.55;color:var(--dim);flex:1;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;
+}
 .wcard-tags{display:flex;flex-wrap:wrap;gap:6px}
 .wcard-tags i{
   font-style:normal;font-size:9.5px;letter-spacing:.06em;
@@ -313,6 +327,8 @@ a.wcard-tilt{color:inherit;cursor:pointer}
 }
 .more-works:hover{color:#fff;border-color:#fff}
 @media (max-width:680px){
+  .works-rail{width:34px}
+  .works-rail span{font-size:14px}
   /* device switch: 3D carousel becomes a native swipe deck */
   #works{height:auto}
   .works-pin{height:100vh}
@@ -338,10 +354,6 @@ a.wcard-tilt{color:inherit;cursor:pointer}
   .wcard-tilt{transform:none!important}
   .wcard .wcard-tilt{border-color:rgba(255,255,255,.3)}
   .wcard-prev{height:150px}
-  .wcard-title{font-size:14px}
-  .works-rail{width:34px}
-  .works-rail span{font-size:14px}
-  .works-hint{display:none}
 }
 
 /* ================= about ================= */
@@ -351,6 +363,11 @@ a.wcard-tilt{color:inherit;cursor:pointer}
   gap:48px;padding:0 28px;max-width:1200px;margin:0 auto;
 }
 .about-left{font-size:10px;letter-spacing:.22em;color:var(--faint);display:flex;flex-direction:column;gap:10px}
+.about-art{
+  display:block;margin-top:20px;aspect-ratio:1;max-width:340px;
+  background:url("art-10137688.png") center/cover no-repeat;
+  border:1px solid var(--hair);
+}
 .about-left b{color:var(--dim);font-weight:400}
 .about-body{max-width:62ch}
 .about-body p{margin-bottom:1.3em;color:#c8cedb}
@@ -392,6 +409,15 @@ a.wcard-tilt{color:inherit;cursor:pointer}
 
 /* ================= footer ================= */
 #footer{padding:16vh 28px 34px;position:relative}
+.foot-art{
+  position:absolute;right:52px;top:8vh;
+  width:min(300px,23vw);aspect-ratio:1;
+  background:url("art-8435329.png") center/cover no-repeat;
+  border:1px solid var(--hair);
+  transform:rotate(-2.5deg);
+  opacity:.94;pointer-events:none;
+}
+@media (max-width:1100px){.foot-art{display:none}}
 .foot-word{
   font-family:var(--disp);font-weight:800;
   font-size:clamp(30px,6.4vw,88px);letter-spacing:.03em;line-height:1.08;
@@ -418,29 +444,34 @@ a.wcard-tilt{color:inherit;cursor:pointer}
 .nav-cta.magnetic{transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .3s,background .3s,color .3s}
 
 /* ================= reveal ================= */
-.rv{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
+.rv{opacity:0;transform:translateY(38px);filter:blur(10px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1),filter 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none;filter:none}
+.rv .sec-rule{transform:scaleX(0);transform-origin:left center;transition:transform 1.4s cubic-bezier(.2,.7,.2,1) .25s}
+.rv.in .sec-rule{transform:scaleX(1)}
+@media (prefers-reduced-motion: reduce){
+  .rv{opacity:1;transform:none;filter:none;transition:none}
+  .rv .sec-rule{transform:none;transition:none}
+}
 </style>
 
 </head>
 <body>
-<!-- section-transition monogram (redrawn on each section change) -->
-<svg id="mono-flash" viewBox="0 0 200 200" aria-hidden="true">
-  <path class="mf-d" d="M100 18 L30 172 L170 172 Z"/>
-  <path class="mf-d" d="M100 52 L54 156 L146 156 Z"/>
-  <line class="mf-d" x1="64" y1="128" x2="136" y2="128"/>
-  <line class="mf-d" x1="70" y1="140" x2="130" y2="140"/>
-  <line class="mf-d" x1="100" y1="18" x2="100" y2="196"/>
-  <line class="mf-d" x1="8" y1="172" x2="192" y2="172"/>
-  <line class="mf-d" x1="100" y1="18" x2="4" y2="196"/>
-  <line class="mf-d" x1="100" y1="18" x2="196" y2="196"/>
-  <circle class="mf-d" cx="100" cy="115" r="62"/>
-</svg>
-
-<canvas id="bg" aria-hidden="true"></canvas>
-<div id="grid-overlay" aria-hidden="true"></div>
-
 <h1 class="visually-hidden">Amirthesh, Amirtheshwaran Navaneethakrishnan. Software engineer, MS Computer Science at UNC Charlotte.</h1>
+
+<!-- ================= intro veil ================= -->
+<div id="intro" aria-hidden="true">
+  <svg viewBox="0 0 600 600" fill="none">
+    <circle class="in-drop" cx="300" cy="-24" r="7" fill="#9ecbf0"/>
+    <circle class="in-splash in-sp-a" cx="300" cy="300" r="3.5" fill="#9ecbf0" opacity="0"/>
+    <circle class="in-splash in-sp-b" cx="300" cy="300" r="3" fill="#9ecbf0" opacity="0"/>
+    <g stroke="#9ecbf0">
+      <circle class="in-rp" cx="300" cy="300" r="10" opacity="0"/>
+      <circle class="in-rp" cx="300" cy="300" r="10" opacity="0"/>
+      <circle class="in-rp" cx="300" cy="300" r="10" opacity="0"/>
+      <circle class="in-rp" cx="300" cy="300" r="10" opacity="0"/>
+    </g>
+  </svg>
+</div>
 
 <!-- ================= nav ================= -->
 <nav id="nav" aria-label="Main">
@@ -453,25 +484,16 @@ a.wcard-tilt{color:inherit;cursor:pointer}
   <a class="nav-cta magnetic" href="mailto:amirthesh14@gmail.com?subject=SDE%20role%2C%20resume%20request">Contact / Resume</a>
 </nav>
 
-<!-- ================= quaternion panel ================= -->
-<aside id="qpanel" aria-label="Scroll telemetry">
-  <div class="qp-title"><span>Scroll Telemetry</span><span class="qp-dot"></span></div>
-  <div class="qp-row"><b>dir</b><span id="qdir">IDLE</span></div>
-  <div class="qp-row"><b>vel</b><span id="qvel">0.0</span></div>
-  <div class="qp-row"><b>pos</b><span id="qpos">0%</span></div>
-  <div class="qp-row"><b>sec</b><span id="qsec">HERO</span></div>
-  <canvas id="gimbal" width="176" height="176" style="width:88px;height:88px"></canvas>
-  <button id="qreset" class="magnetic">BACK TO TOP</button>
-</aside>
-
 <!-- ================= page (virtual scroll) ================= -->
 <div id="page">
 
   <section id="hero" aria-label="Intro">
+    <div class="hero-art" aria-hidden="true"></div>
+    <div class="hero-name" aria-hidden="true">AMIRTHESH</div>
     <div class="hero-meta">
       <span>SOFTWARE ENGINEER</span>
       <span><em>MS CS · UNC CHARLOTTE · MAY 2027</em></span>
-      <span><em>FULL-STACK / ML / GAMES</em></span>
+      <span><em>FULL-STACK / JAVA / REACT / AWS</em></span>
     </div>
     <div class="hero-scroll">SCROLL</div>
     <div class="hero-jp">アミルテシュ<span>ソフトウェア エンジニア</span></div>
@@ -479,11 +501,12 @@ a.wcard-tilt{color:inherit;cursor:pointer}
   </section>
 
   <section id="works" aria-label="Selected works">
+    <h2 class="visually-hidden">Selected works</h2>
     <div class="works-pin">
-      <div class="works-rail" aria-hidden="true"><span>WORKS</span></div>
-      <div class="works-count" id="works-count">01 / 06</div>
-      <div class="carousel-stage" id="stage">
-        <div id="carousel">
+    <div class="works-rail" aria-hidden="true"><span>WORKS</span></div>
+    <div class="works-count" id="works-count">01 / 06</div>
+    <div class="carousel-stage" id="stage">
+    <div id="carousel">
 
           <article class="wcard" data-i="0">
             <a class="wcard-tilt" href="https://github.com/Amirtheshwaran/anonu-remake" target="_blank" rel="noopener">
@@ -491,7 +514,7 @@ a.wcard-tilt{color:inherit;cursor:pointer}
               <div class="wcard-body">
                 <span class="wcard-date">2026 · SHIPPED</span>
                 <h3 class="wcard-title">ANONU</h3>
-                <p class="wcard-desc">Anonymous social app I built for campus life. You verify with your school email, post whatever is on your mind, and moderation keeps the feed from turning toxic. Around 50 to 100 people use it every day.</p>
+                <p class="wcard-desc">Campus microblog built in Flutter with Firebase for auth, Firestore, and storage. Posts can go out anonymous or under your name, per post, and every post carries an expiry from one hour to 48 hours so the feed doesn't turn into a permanent record. Firestore and Storage security rules handle access control instead of a custom backend, and moderation runs through a reports queue rather than pre-screening every post. Around 50 to 100 people use it every day.</p>
                 <div class="wcard-tags"><i>flutter</i><i>riverpod</i><i>firestore</i></div>
                 <span class="wcard-link">VIEW PROJECT ↗</span>
               </div>
@@ -504,7 +527,7 @@ a.wcard-tilt{color:inherit;cursor:pointer}
               <div class="wcard-body">
                 <span class="wcard-date">2026 · IN BUILD</span>
                 <h3 class="wcard-title">MEETMIND</h3>
-                <p class="wcard-desc">My self hosted meeting recorder. It records calls right in the browser, transcribes them with Whisper, then pulls out summaries and action items so nobody has to write minutes ever again.</p>
+                <p class="wcard-desc">Self-hosted meeting recorder built on Next.js. Records audio in the browser with a live waveform view, then runs it through Groq's whisper-large-v3 for transcription and Gemini 1.5 Flash for summaries and action items, chunked with a map-reduce pass so long meetings don't blow past a context limit. Ships with a zero-config local mode, JSON storage, mocked pipelines, so it runs with no API keys, and swaps in Supabase Postgres and real model calls once you're ready to deploy.</p>
                 <div class="wcard-tags"><i>supabase</i><i>groq_whisper</i><i>gemini</i></div>
                 <span class="wcard-link">VIEW PROJECT ↗</span>
               </div>
@@ -517,7 +540,7 @@ a.wcard-tilt{color:inherit;cursor:pointer}
               <div class="wcard-body">
                 <span class="wcard-date">2026 · DEPLOYED</span>
                 <h3 class="wcard-title">GAIT RE-ID</h3>
-                <p class="wcard-desc">Computer vision system that recognizes people by the way they walk. I built the video pipeline that matches a person across different camera feeds. It now runs in a UNC Charlotte lab.</p>
+                <p class="wcard-desc">Course project extending OpenGait, ByteTrack, and PaddleSeg into an entry-counting pipeline: track a person on video, segment them into silhouettes, extract a gait embedding, match it against other entries with cosine similarity instead of a fixed gallery. Added cross-video identity comparison, a threshold sweep across multiple checkpoints, and parallel processing across GPUs. Settled on GaitBase with a 0.97 cosine threshold. Now running in a UNC Charlotte lab.</p>
                 <div class="wcard-tags"><i>python</i><i>opencv</i><i>ml</i></div>
                 <span class="wcard-link">VIEW PROJECT ↗</span>
               </div>
@@ -530,7 +553,7 @@ a.wcard-tilt{color:inherit;cursor:pointer}
               <div class="wcard-body">
                 <span class="wcard-date">2024 · SHIPPED</span>
                 <h3 class="wcard-title">DNA ERROR SCAN</h3>
-                <p class="wcard-desc">Bioinformatics pipeline that hunts for sequencing errors in DNA reads. Quality filtering cut the observed error rate by about 13 percent, with clean visual reports for mismatches and indels.</p>
+                <p class="wcard-desc">Bioinformatics pipeline built with pysam and BWA that flags likely sequencing errors by comparing aligned DNA reads against reference quality scores. Filtering out low quality base calls before alignment cut the observed error rate by about 13 percent, with reports that visualize where mismatches and indels cluster.</p>
                 <div class="wcard-tags"><i>python</i><i>pysam</i><i>bwa</i></div>
               </div>
             </div>
@@ -542,7 +565,7 @@ a.wcard-tilt{color:inherit;cursor:pointer}
               <div class="wcard-body">
                 <span class="wcard-date">2026 · SHIPPED</span>
                 <h3 class="wcard-title">DENTAL DEMAND</h3>
-                <p class="wcard-desc">ML dashboard that forecasts dental care demand from CDC public data. It highlights underserved regions on a map so you can see exactly where new clinics would matter most.</p>
+                <p class="wcard-desc">ML dashboard built in Streamlit that ranks counties by dental care demand from CDC PLACES data. Raw CDC data alone gets ranked by a normalized tooth-loss prevalence index; once it's merged with Census variables like income, age, and urban density, it unlocks weighted sliders for full multi-variable inference. The mode switch is automatic, based on which columns are in the uploaded file.</p>
                 <div class="wcard-tags"><i>streamlit</i><i>ml</i><i>cdc_data</i></div>
                 <span class="wcard-link">VIEW PROJECT ↗</span>
               </div>
@@ -555,17 +578,17 @@ a.wcard-tilt{color:inherit;cursor:pointer}
               <div class="wcard-body">
                 <span class="wcard-date">2026 · SHIPPED</span>
                 <h3 class="wcard-title">UREC SIM</h3>
-                <p class="wcard-desc">Training tool I made for UREC staff. It simulates messy shift incidents, you write the report, and Gemini grades your writing with feedback. Runs on Netlify with serverless functions.</p>
+                <p class="wcard-desc">Training tool for UREC staff to practice writing shift reports, built with React and Vite on the frontend and Netlify Functions as the serverless backend. Covers 12 scenarios across three real facilities, with forms structured to match the actual system staff use on shift. Reports are scored by Gemini 2.0 Flash on completeness, specificity, tone, and action items, with a local heuristic scorer as a fallback so grading still works with no API key or network.</p>
                 <div class="wcard-tags"><i>react</i><i>vite</i><i>gemini</i></div>
                 <span class="wcard-link">VIEW PROJECT ↗</span>
               </div>
             </a>
           </article>
 
-        </div>
-      </div>
-      <a class="more-works magnetic" href="https://github.com/Amirtheshwaran?tab=repositories" target="_blank" rel="noopener">More Works ↗</a>
-      <div class="works-hint">DRAG / SCROLL TO ROTATE</div>
+    </div>
+    </div>
+    <a class="more-works magnetic" href="https://github.com/Amirtheshwaran?tab=repositories" target="_blank" rel="noopener">More Works ↗</a>
+    <div class="works-hint">DRAG / SCROLL TO ROTATE</div>
     </div>
   </section>
 
@@ -583,11 +606,12 @@ a.wcard-tilt{color:inherit;cursor:pointer}
         <span>NOW / CHARLOTTE, NC</span>
         <span>STATUS / OPEN TO SDE ROLES</span>
         <span>AVAILABLE / MAY 2027 · SOONER FOR REMOTE</span>
+        <span class="about-art" aria-hidden="true"></span>
       </div>
       <div class="about-body rv">
         <p><b>I go by Amir.</b> The full name is Amirtheshwaran Navaneethakrishnan. It doesn't fit on badges, so most things I make ship under a shorter name.</p>
-        <p>I'm doing my MS in Computer Science at <b>UNC Charlotte</b>, graduating May 2027. Before that I did a BTech in AI &amp; ML from SRM IST Chennai, first class with distinction. In between there was an internship at Drata IT Solutions building Python APIs. Eight endpoints, three third party integrations, and a long tail of backend bugs that taught me more than the endpoints did.</p>
-        <p>I've shipped 15+ projects: full stack apps, ML pipelines, computer vision, and a stubborn habit of building games nobody asked for. The throughline is simple. I like putting real things in front of real users and finding out what breaks.</p>
+        <p>I'm doing my MS in Computer Science at <b>UNC Charlotte</b>, graduating May 2027, with a focus on backend systems and software that has to hold up under real load. Before that I did a BTech in AI &amp; ML from SRM IST Chennai, first class with distinction. In between there was an internship at Drata IT Solutions building Python APIs. Eight endpoints, three third party integrations, and a long tail of backend bugs that taught me more than the endpoints did.</p>
+        <p>Most of what I build is full stack: a Java or Python service underneath, a React front end on top, deployed on AWS or Firebase depending on what the project needs. I've shipped 15+ of these, from social apps to ML pipelines to computer vision, and I'd rather ship something smaller that stays up under real users than something bigger that only survives a demo. Still learning something new with most of what I build.</p>
         <p class="sig">// currently: SDE roles, high-impact teams</p>
         <div class="about-facts">
           <div class="fact"><b>15+</b><span>PROJECTS SHIPPED</span></div>
@@ -607,15 +631,17 @@ a.wcard-tilt{color:inherit;cursor:pointer}
     </div>
     <div class="skill-rows rv">
       <div class="skill-row"><span class="skill-cat">LANGUAGES</span><div class="skill-tags"><i>python</i><i>go</i><i>typescript</i><i>javascript</i><i>java</i><i>c_sharp</i><i>dart</i></div></div>
-      <div class="skill-row"><span class="skill-cat">WEB</span><div class="skill-tags"><i>react</i><i>next_js</i><i>three_js</i><i>node_js</i><i>fastapi</i><i>express</i></div></div>
+      <div class="skill-row"><span class="skill-cat">WEB</span><div class="skill-tags"><i>react</i><i>next_js</i><i>spring_boot</i><i>three_js</i><i>node_js</i><i>fastapi</i><i>express</i></div></div>
       <div class="skill-row"><span class="skill-cat">MOBILE</span><div class="skill-tags"><i>flutter</i><i>riverpod</i><i>react_native</i></div></div>
-      <div class="skill-row"><span class="skill-cat">DATA</span><div class="skill-tags"><i>postgresql</i><i>firestore</i><i>supabase</i><i>redis</i><i>mongodb</i></div></div>
+      <div class="skill-row"><span class="skill-cat">DATA</span><div class="skill-tags"><i>postgresql</i><i>firebase</i><i>firestore</i><i>supabase</i><i>redis</i><i>mongodb</i></div></div>
       <div class="skill-row"><span class="skill-cat">AI / ML</span><div class="skill-tags"><i>tensorflow</i><i>opencv</i><i>scikit_learn</i><i>gemini_api</i><i>groq</i></div></div>
       <div class="skill-row"><span class="skill-cat">INFRA</span><div class="skill-tags"><i>aws</i><i>docker</i><i>github_pages</i><i>netlify</i><i>linux</i><i>git</i></div></div>
     </div>
   </section>
 
   <section id="footer" aria-label="Contact">
+    <h2 class="visually-hidden">Contact</h2>
+    <div class="foot-art" aria-hidden="true"></div>
     <div class="foot-word rv">LET'S BUILD<br><em>SOMETHING.</em></div>
     <div class="foot-links rv">
       <a class="magnetic" href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener"><b>gh /</b> github.com/Amirtheshwaran ↗</a>
@@ -624,44 +650,25 @@ a.wcard-tilt{color:inherit;cursor:pointer}
     </div>
     <div class="foot-fine rv">
       <span>© 2026 AMIRTHESHWARAN NAVANEETHAKRISHNAN</span>
-      <span>BUILT WITH THREE.JS · NO FRAMEWORKS · NO BUILD STEP</span>
+      <span>BUILT WITH GSAP · NO FRAMEWORKS · NO BUILD STEP</span>
     </div>
   </section>
 
 </div>
 <div id="spacer" aria-hidden="true"></div>
 
-<!-- ================= intro ================= -->
-<div id="intro" aria-hidden="true">
-  <svg viewBox="0 0 200 200">
-    <path class="fill-tri" d="M100 52 L54 156 L146 156 Z M100 92 L124 148 L76 148 Z"/>
-    <path class="draw" d="M100 18 L30 172 L170 172 Z"/>
-    <path class="draw" d="M100 52 L54 156 L146 156 Z"/>
-    <line class="draw" x1="64" y1="128" x2="136" y2="128"/>
-    <line class="draw" x1="70" y1="140" x2="130" y2="140"/>
-    <line class="draw" x1="100" y1="4" x2="100" y2="196"/>
-    <line class="draw" x1="8" y1="172" x2="192" y2="172"/>
-    <line class="draw" x1="100" y1="18" x2="4" y2="196"/>
-    <line class="draw" x1="100" y1="18" x2="196" y2="196"/>
-    <line class="draw" x1="30" y1="172" x2="30" y2="8"/>
-    <line class="draw" x1="170" y1="172" x2="170" y2="8"/>
-    <circle class="draw" cx="100" cy="115" r="62"/>
-  </svg>
-  <div id="intro-tag">portfolio of amirtheshwaran navaneethakrishnan</div>
-  <div id="intro-skip">CLICK TO SKIP</div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.146.0/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 /* ============================================================
    AMIR — single-file portfolio
-   three.js 0.146.0 UMD (cdnjs) + vanilla JS, no build step
+   GSAP 3.12 (cdnjs) + vanilla JS, no build step
    ============================================================ */
 (function(){
 "use strict";
 
 var isTouch = window.matchMedia("(pointer:coarse)").matches;
 if (isTouch) document.documentElement.classList.add("touch");
+var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 var $  = function(s){ return document.querySelector(s); };
 var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
@@ -669,19 +676,18 @@ var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAl
 var page    = $("#page"),
     spacer  = $("#spacer"),
     works   = $("#works"),
-    worksPin= $("#works .works-pin"),
+    worksPin= $(".works-pin"),
     stage   = $("#stage"),
-    carousel= $("#carousel"),
+    carouselEl = $("#carousel"),
     cards   = $$(".wcard"),
-    intro   = $("#intro"),
-    flash   = $("#mono-flash");
+    heroName= $(".hero-name");
 
 var vw = innerWidth, vh = innerHeight;
 var targetY = 0, curY = 0, velY = 0, docH = 0;
 var worksTop = 0, worksH = 0;
 var revealEls = [];
-
-document.body.classList.add("locked");
+var heroArt = $(".hero-art");
+var heroDone = false;
 
 /* ---------- tiny tween helper ---------- */
 var tweens = [];
@@ -711,329 +717,51 @@ function measure(){
   });
 }
 
-/* ---------- SVG blueprint drawing ---------- */
-function drawSVG(root, sel, dur, stagger){
-  var els = $$(sel);
-  els.forEach(function(p, i){
-    var len = p.getTotalLength ? p.getTotalLength() : 300;
-    p.style.transition = "none";
-    p.style.strokeDasharray  = len;
-    p.style.strokeDashoffset = len;
-  });
-  requestAnimationFrame(function(){ requestAnimationFrame(function(){
-    els.forEach(function(p, i){
-      p.style.transition = "stroke-dashoffset " + dur + "ms cubic-bezier(.6,0,.2,1) " + (i * stagger) + "ms";
-      p.style.strokeDashoffset = 0;
-    });
-  });});
-}
-
 /* ============================================================
-   THREE — mosaic wall, wordmark shader, wireframe monogram
+   Hero — GSAP name reveal (plays once on load)
    ============================================================ */
-var three = null;
-try {
-  var renderer = new THREE.WebGLRenderer({ canvas: $("#bg"), antialias: true });
-  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.75));
-  renderer.setSize(vw, vh);
-
-  var scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x000000);
-
-  var FOV = 50;
-  var camDist = (vh / 2) / Math.tan(THREE.MathUtils.degToRad(FOV / 2));
-  var cam = new THREE.PerspectiveCamera(FOV, vw / vh, camDist / 10, camDist * 4);
-  cam.position.z = camDist;
-
-  /* ----- mosaic tile wall (fullscreen shader plane) ----- */
-  var MOSAIC_Z = -600;
-  var mosaicUniforms = {
-    uTime:   { value: 0 },
-    uScroll: { value: 0 },
-    uBoost:  { value: 0 },
-    uRes:    { value: new THREE.Vector2(vw, vh) }
-  };
-  var mosaic = new THREE.Mesh(
-    new THREE.PlaneGeometry(1, 1),
-    new THREE.ShaderMaterial({
-      uniforms: mosaicUniforms,
-      depthWrite: false,
-      vertexShader:
-        "varying vec2 vUv;" +
-        "void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.); }",
-      fragmentShader:
-        "precision highp float;" +
-        "uniform float uTime,uScroll,uBoost; uniform vec2 uRes; varying vec2 vUv;" +
-        "float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453); }" +
-        "void main(){" +
-        "  vec2 gridN = floor(uRes / 54.0);" +
-        "  vec2 g = vUv * gridN + vec2(0.0, uScroll * 0.0016);" +
-        "  vec2 cell = floor(g);" +
-        "  vec2 f = fract(g);" +
-        "  float bd = smoothstep(0.0,0.07,f.x) * smoothstep(0.0,0.07,f.y) * (1.0 - smoothstep(0.93,1.0,f.x)) * (1.0 - smoothstep(0.93,1.0,f.y));" +
-        "  float h = hash(cell);" +
-        "  vec2 c1 = gridN * vec2(0.5 + 0.36 * sin(uTime * 0.13),  0.5 + 0.34 * cos(uTime * 0.171));" +
-        "  vec2 c2 = gridN * vec2(0.5 + 0.42 * cos(uTime * 0.093 + 2.1), 0.5 + 0.30 * sin(uTime * 0.127 + 1.3));" +
-        "  vec2 c3 = gridN * vec2(0.5 + 0.30 * sin(uTime * 0.07 + 4.0),  0.20 + 0.15 * sin(uTime * 0.11));" +
-        "  float glowp = (1.0 - smoothstep(0.0, 6.5, length(cell - c1))) * 0.95" +
-        "              + (1.0 - smoothstep(0.0, 8.5, length(cell - c2))) * 0.70" +
-        "              + (1.0 - smoothstep(0.0, 5.0, length(cell - c3))) * 0.55;" +
-        "  float tw = step(0.988, hash(cell + floor(uTime * 2.0))) * 0.7;" +
-        "  float lum = 0.025 + h * 0.028 + glowp * (0.22 + 0.6 * hash(cell + 7.0)) + tw + uBoost * 0.4;" +
-        "  vec3 col = vec3(0.008, 0.024, 0.020) + vec3(0.16, 0.72, 0.55) * lum;" +
-        "  col *= bd;" +
-        "  col *= 1.0 - smoothstep(0.30, 1.30, length(vUv - 0.5) * 1.55);" +
-        "  gl_FragColor = vec4(col, 1.0);" +
-        "}"
-    })
-  );
-  mosaic.position.z = MOSAIC_Z;
-  scene.add(mosaic);
-
-  function sizeMosaic(){
-    var k = (camDist - MOSAIC_Z) / camDist;
-    mosaic.scale.set(vw * k * 1.05, vh * k * 1.05, 1);
+/* ---------- intro: waterdrop → ripples → name surfaces ---------- */
+var introEl = $("#intro");
+if (introEl){
+  if (reducedMotion){
+    introEl.classList.add("gone");
+  } else {
+    var itl = gsap.timeline({ onComplete: function(){ introEl.classList.add("gone"); } });
+    itl.to(".in-drop", { attr: { cy: 300 }, scaleY: 1.4, transformOrigin: "50% 100%", duration: 0.65, ease: "power2.in" }, 0.15)
+       .set(".in-drop", { opacity: 0 })
+       .to(".in-sp-a", { attr: { cx: 262, cy: 252 }, opacity: 0.9, duration: 0.28, ease: "power1.out" }, 0.8)
+       .to(".in-sp-b", { attr: { cx: 338, cy: 258 }, opacity: 0.9, duration: 0.28, ease: "power1.out" }, 0.8)
+       .to(".in-splash", { attr: { cy: 306 }, opacity: 0, duration: 0.34, ease: "power1.in" }, 1.08)
+       .to(".in-rp", {
+          attr: { r: 265 }, opacity: 0.75, strokeWidth: 0.4, duration: 1.5,
+          ease: "power2.out", stagger: 0.14,
+          onStart: function(){ gsap.set(".in-rp", { strokeWidth: 2.2 }); }
+        }, 0.8)
+       .to(".in-rp", { opacity: 0, duration: 0.6, ease: "power1.out", stagger: 0.1 }, 1.5)
+       .to(introEl, { opacity: 0, duration: 0.7, ease: "power2.inOut" }, 1.35);
   }
-  sizeMosaic();
-
-  /* ----- wordmark "AMIR" — canvas texture + liquid/glitch shader ----- */
-  var wordCanvas = document.createElement("canvas");
-  wordCanvas.width = 2048; wordCanvas.height = 720;
-  var wordTex = new THREE.CanvasTexture(wordCanvas);
-  wordTex.minFilter = THREE.LinearFilter;
-
-  function paintWord(){
-    var ctx = wordCanvas.getContext("2d");
-    ctx.clearRect(0, 0, 2048, 720);
-    ctx.fillStyle = "#fff";
-    ctx.textBaseline = "middle";
-    ctx.font = "800 210px Unbounded, 'Arial Narrow', sans-serif";
-    if ("letterSpacing" in ctx) ctx.letterSpacing = "6px";
-    var word = "AMIRTHESH", pad = 30;
-    var w = ctx.measureText(word).width;
-    var sx = Math.min(1.05, (2048 - pad * 2) / w);
-    ctx.save();
-    ctx.translate((2048 - w * sx) / 2, 380);
-    ctx.scale(sx, 1);
-    ctx.fillText(word, 0, 0);
-    ctx.restore();
-    wordTex.needsUpdate = true;
-  }
-  paintWord();
-  if (document.fonts && document.fonts.load){
-    document.fonts.load("800 210px Unbounded").then(paintWord).catch(function(){});
-    document.fonts.ready.then(paintWord).catch(function(){});
-  }
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(paintWord);
-
-  var wordUniforms = {
-    uMap:    { value: wordTex },
-    uTime:   { value: 0 },
-    uWarp:   { value: 0.4 },
-    uGlitch: { value: 0 },
-    uAlpha:  { value: 0 }
-  };
-  var word = new THREE.Mesh(
-    new THREE.PlaneGeometry(1, 1),
-    new THREE.ShaderMaterial({
-      uniforms: wordUniforms,
-      transparent: true,
-      depthWrite: false,
-      vertexShader:
-        "varying vec2 vUv;" +
-        "void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.); }",
-      fragmentShader:
-        "precision highp float;" +
-        "uniform sampler2D uMap; uniform float uTime,uWarp,uGlitch,uAlpha; varying vec2 vUv;" +
-        "float hash(float p){ return fract(sin(p * 127.1) * 43758.5453); }" +
-        "void main(){" +
-        "  vec2 uv = vUv;" +
-        "  uv.x += sin(uv.y * 6.5 + uTime * 1.15) * 0.013 * uWarp" +
-        "        + sin(uv.y * 21.0 - uTime * 1.8) * 0.006 * uWarp;" +
-        "  uv.y += sin(uv.x * 8.5 + uTime * 0.9) * 0.012 * uWarp;" +
-        "  float row = floor(uv.y * 26.0);" +
-        "  float g = step(0.80, hash(row + floor(uTime * 9.0))) * uGlitch;" +
-        "  uv.x += (hash(row * 3.71) - 0.5) * 0.10 * g;" +
-        "  float split = 0.0035 * uGlitch + 0.0022 * uWarp;" +
-        "  float r  = texture2D(uMap, uv + vec2(split, 0.0)).a;" +
-        "  float gc = texture2D(uMap, uv).a;" +
-        "  float b  = texture2D(uMap, uv - vec2(split, 0.0)).a;" +
-        "  float a  = max(r, max(gc, b)) * uAlpha;" +
-        "  if (a < 0.01) discard;" +
-        "  gl_FragColor = vec4(r, gc, b, a);" +
-        "}"
-    })
-  );
-  scene.add(word);
-
-  var wordScale = 1.28;
-  function sizeWord(){
-    var w = Math.min(vw * 0.86, 1100);
-    word.scale.set(w * wordScale, w * (720 / 2048) * wordScale, 1);
-  }
-  sizeWord();
-
-  /* ----- wireframe "A" monogram (LineSegments) ----- */
-  function monoGeometry(){
-    var S = [
-      [100,18, 30,172],[30,172,170,172],[170,172,100,18],       // outer triangle
-      [100,52, 54,156],[54,156,146,156],[146,156,100,52],       // inner triangle
-      [64,128,136,128],[70,140,130,140],                        // crossbars
-      [100,18,100,196],[8,172,192,172],                         // construction
-      [100,18,4,196],[100,18,196,196]
-    ];
-    var pts = [], D = 14, cx = 100, cy = 108, sc = 1;
-    [D, -D].forEach(function(z){
-      S.forEach(function(s){
-        pts.push((s[0]-cx)*sc, -(s[1]-cy)*sc, z, (s[2]-cx)*sc, -(s[3]-cy)*sc, z);
-      });
-    });
-    // vertical connectors at key vertices
-    [[100,18],[30,172],[170,172],[100,52],[54,156],[146,156]].forEach(function(v){
-      pts.push((v[0]-cx)*sc, -(v[1]-cy)*sc, D, (v[0]-cx)*sc, -(v[1]-cy)*sc, -D);
-    });
-    var geo = new THREE.BufferGeometry();
-    geo.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
-    return geo;
-  }
-  var mono = new THREE.LineSegments(
-    monoGeometry(),
-    new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.55, blending: THREE.AdditiveBlending, depthWrite: false })
-  );
-  mono.scale.setScalar(Math.min(vw, vh) * 0.0009);
-  mono.position.set(vw * 0.30, -vh * 0.30, -60);
-  scene.add(mono);
-
-  three = {
-    renderer: renderer, scene: scene, cam: cam,
-    mosaicU: mosaicUniforms, wordU: wordUniforms,
-    word: word, mono: mono,
-    sizeWord: sizeWord, sizeMosaic: sizeMosaic,
-    setWordScale: function(s){ wordScale = s; sizeWord(); },
-    resize: function(){
-      renderer.setSize(vw, vh);
-      camDist = (vh / 2) / Math.tan(THREE.MathUtils.degToRad(FOV / 2));
-      cam.position.z = camDist;
-      cam.aspect = vw / vh;
-      cam.updateProjectionMatrix();
-      mosaicUniforms.uRes.value.set(vw, vh);
-      sizeMosaic(); sizeWord();
-      mono.scale.setScalar(Math.min(vw, vh) * 0.0009);
-      mono.position.x = vw * 0.30;
-    }
-  };
-} catch (e) {
-  document.documentElement.classList.add("no-webgl");
-  var fb = document.createElement("div");
-  fb.textContent = "AMIRTHESH";
-  fb.style.cssText = "position:absolute;inset:0;display:flex;align-items:center;justify-content:center;" +
-    "font-family:'Unbounded','Arial Narrow',sans-serif;font-weight:800;font-size:8vw;line-height:1;letter-spacing:.04em;color:#fff;";
-  $("#hero").appendChild(fb);
 }
 
-/* ============================================================
-   Quaternion panel + gimbal
-   ============================================================ */
-var qdir = $("#qdir"), qvel = $("#qvel"), qpos = $("#qpos"), qsec = $("#qsec");
-var gimbal = $("#gimbal");
-var gtx = gimbal ? gimbal.getContext("2d") : null;
-if (gtx) gtx.scale(2, 2);
-
-function mulQ(a, b){
-  return {
-    x: a.w*b.x + a.x*b.w + a.y*b.z - a.z*b.y,
-    y: a.w*b.y - a.x*b.z + a.y*b.w + a.z*b.x,
-    z: a.w*b.z + a.x*b.y - a.y*b.x + a.z*b.w,
-    w: a.w*b.w - a.x*b.x - a.y*b.y - a.z*b.z
-  };
-}
-
-function rotByQuat(v, q){
-  // v' = q * v * q^-1  (expanded)
-  var x=v[0],y=v[1],z=v[2], qxv=q.x,qyv=q.y,qzv=q.z,qwv=q.w;
-  var ix =  qwv*x + qyv*z - qzv*y,
-      iy =  qwv*y + qzv*x - qxv*z,
-      iz =  qwv*z + qxv*y - qyv*x,
-      iw = -qxv*x - qyv*y - qzv*z;
-  return [
-    ix*qwv + iw*-qxv + iy*-qzv - iz*-qyv,
-    iy*qwv + iw*-qyv + iz*-qxv - ix*-qzv,
-    iz*qwv + iw*-qzv + ix*-qyv - iy*-qxv
-  ];
-}
-
-function drawGimbal(q){
-  if (!gtx) return;
-  gtx.clearRect(0, 0, 88, 88);
-  var C = 44, R = 34;
-  gtx.strokeStyle = "rgba(255,255,255,.18)";
-  gtx.lineWidth = 1;
-  gtx.beginPath(); gtx.arc(C, C, R, 0, 6.2832); gtx.stroke();
-  var rings = [
-    { plane: "xy", color: "143,227,200" },
-    { plane: "xz", color: "255,255,255" },
-    { plane: "yz", color: "139,148,163" }
-  ];
-  rings.forEach(function(ring){
-    for (var pass = 0; pass < 2; pass++){
-      gtx.beginPath();
-      var started = false;
-      for (var i = 0; i <= 40; i++){
-        var a = i / 40 * 6.2832, p;
-        if (ring.plane === "xy") p = [Math.cos(a), Math.sin(a), 0];
-        else if (ring.plane === "xz") p = [Math.cos(a), 0, Math.sin(a)];
-        else p = [0, Math.cos(a), Math.sin(a)];
-        var r = rotByQuat(p, q);
-        var vis = pass === 0 ? r[2] < 0 : r[2] >= 0;
-        var px = C + r[0] * R, py = C - r[1] * R;
-        if (vis){
-          if (!started){ gtx.moveTo(px, py); started = true; }
-          else gtx.lineTo(px, py);
-        } else started = false;
-      }
-      gtx.strokeStyle = "rgba(" + ring.color + "," + (pass === 0 ? 0.10 : 0.55) + ")";
-      gtx.stroke();
-    }
-  });
-}
-
-var qreset = $("#qreset");
-if (qreset) qreset.addEventListener("click", function(){
-  window.scrollTo({ top: 0, behavior: isTouch ? "smooth" : "auto" });
-});
-
-/* ============================================================
-   Intro sequence
-   ============================================================ */
-var introDone = false, introTimers = [];
-var wordAlphaBase = 0;
-function slam(){
-  if (three){
-    tween(950, function(p){
-      three.setWordScale(1.30 - 0.30 * p);
-      wordAlphaBase = Math.min(1, p * 2.5);
-      three.wordU.uGlitch.value = Math.max(three.wordU.uGlitch.value, (1 - p) * 1.2);
-      three.mosaicU.uBoost.value = (1 - p) * 0.9;
+if (heroName){
+  if (reducedMotion){
+    gsap.set(heroName, { opacity: 1, filter: "blur(0px)", x: 0, y: 0, scale: 1 });
+    heroDone = true;
+  } else {
+    gsap.set(heroName, { xPercent: -50, yPercent: -50, x: 0, y: 10, scale: 0.96, opacity: 0, filter: "blur(10px)" });
+    gsap.timeline({ delay: 1.5, onComplete: function(){ heroDone = true; } }).to(heroName, {
+      opacity: 1, filter: "blur(0px)", x: 0, y: 0, scale: 1,
+      duration: 0.9, ease: "back.out(1.4)"
     });
   }
 }
-function endIntro(){
-  if (introDone) return;
-  introDone = true;
-  introTimers.forEach(clearTimeout);
-  intro.classList.add("done");
-  document.body.classList.remove("locked");
-  slam();
-  setTimeout(function(){ intro.style.display = "none"; }, 700);
+var setNameY = heroName ? gsap.quickSetter(heroName, "y", "px") : null;
+if (heroName && reducedMotion) {
+  /* xPercent/yPercent still needed for centering even without motion */
+  gsap.set(heroName, { xPercent: -50, yPercent: -50 });
 }
-drawSVG(intro, "#intro .draw", 1250, 90);
-introTimers.push(setTimeout(function(){ intro.classList.add("tagged"); }, 900));
-introTimers.push(setTimeout(function(){ intro.classList.add("filled"); }, 2150));
-introTimers.push(setTimeout(endIntro, 2820));
-intro.addEventListener("click", endIntro);
 
 /* ============================================================
-   Carousel
+   Works — diagonal 3D carousel, scroll-spun + draggable
    ============================================================ */
 var CARD_STEP = 60, RADIUS = 430;
 var dragRot = 0, dragVel = 0, dragging = false, dragX = 0;
@@ -1088,9 +816,12 @@ stage.addEventListener("scroll", function(){
   worksCount.textContent = "0" + (best + 1) + " / 06";
 }, { passive: true });
 
+var wEase = 1; /* 0 = off-stage, 1 = fully arrived; set per-frame in raf */
+
 function renderCarousel(prog){
   if (mobileWorks.matches) return;
-  var rot = -prog * 360 + dragRot;
+  /* extra spin while entering/leaving so the ring swings into place */
+  var rot = -prog * 360 + dragRot + (1 - wEase) * 70;
   var best = 0, bestCos = -2;
   cards.forEach(function(card, i){
     var ang = i * CARD_STEP + rot;
@@ -1131,25 +862,6 @@ $$("[data-goto]").forEach(function(a){
   });
 });
 
-/* ---------- section-change monogram flash ---------- */
-var sectionEls = [$("#hero"), works, $("#about"), $("#skills"), $("#footer")];
-var curSection = 0, flashTimer = null;
-function checkSection(){
-  var mid = curY + vh * 0.5, idx = 0;
-  for (var i = 0; i < sectionEls.length; i++){
-    if (mid >= sectionEls[i].offsetTop) idx = i;
-  }
-  if (idx !== curSection){
-    curSection = idx;
-    if (introDone){
-      flash.classList.add("show");
-      drawSVG(flash, "#mono-flash .mf-d", 1000, 60);
-      clearTimeout(flashTimer);
-      flashTimer = setTimeout(function(){ flash.classList.remove("show"); }, 1500);
-    }
-  }
-}
-
 /* ---------- magnetic hover ---------- */
 var magnets = $$(".magnetic");
 if (!isTouch) addEventListener("mousemove", function(e){
@@ -1167,9 +879,6 @@ if (!isTouch) addEventListener("mousemove", function(e){
    Main loop
    ============================================================ */
 var lastT = performance.now(), frame = 0;
-var spinAxis = new (window.THREE ? THREE.Vector3 : function(){})();
-var dq = window.THREE ? new THREE.Quaternion() : null;
-var IDENT = window.THREE ? new THREE.Quaternion() : null;
 
 function raf(now){
   requestAnimationFrame(raf);
@@ -1185,18 +894,53 @@ function raf(now){
     var k = 1 - Math.pow(0.001, dt / 1000); // ~smooth lerp, framerate independent
     curY += (targetY - curY) * Math.min(1, k * 7);
     if (Math.abs(targetY - curY) < 0.05) curY = targetY;
-    page.style.transform = "translate3d(0," + (-curY).toFixed(2) + "px,0)";
+    /* velocity skew — the page shears a touch with scroll speed */
+    var skew = reducedMotion ? 0 : Math.max(-1.3, Math.min(1.3, velY * 0.0038));
+    page.style.transform = "translate3d(0," + (-curY).toFixed(2) + "px,0) skewY(" + skew.toFixed(3) + "deg)";
   }
   velY = velY * 0.9 + (targetY - curY) * 0.1;
 
-  /* works pin + carousel */
+  /* scroll effects: layered hero parallax */
+  if (!reducedMotion && curY < vh * 1.3){
+    if (heroArt){
+      heroArt.style.transform = "translate3d(0," + (curY * 0.28).toFixed(1) + "px,0)";
+      heroArt.style.opacity = Math.max(0, 0.88 - (curY / vh) * 0.75).toFixed(3);
+    }
+    if (setNameY && heroDone) setNameY(-curY * 0.16);
+  }
+
+  /* works pin + carousel spin */
   var wprog = 0;
   if (worksH > vh){
+    var pinEnd = worksTop + worksH - vh;
     var raw = (curY - worksTop) / (worksH - vh);
     wprog = Math.max(0, Math.min(1, raw));
-    if (!isTouch){
+    if (!isTouch && worksPin){
       var pinY = Math.max(0, Math.min(worksH - vh, curY - worksTop));
       worksPin.style.transform = "translate3d(0," + pinY.toFixed(2) + "px,0)";
+    }
+    /* stage entrance / exit — fade + swing in, dissolve out, both directions */
+    if (!mobileWorks.matches){
+      var vIn  = Math.max(0, Math.min(1, (curY - (worksTop - vh * 0.9)) / (vh * 0.75)));
+      var vOut = Math.max(0, Math.min(1, (curY - pinEnd) / (vh * 0.75)));
+      var wvis = Math.min(vIn, 1 - vOut);
+      wEase = wvis * wvis * (3 - 2 * wvis); // smoothstep
+      worksPin.style.opacity = wEase.toFixed(3);
+      if (carouselEl){
+        /* free-floating tilt: slow drift + mouse lean + scroll-velocity dip */
+        var fx = 8, fz = -5;
+        if (!reducedMotion){
+          fx = 8 + Math.sin(t * 0.22) * 4.5 + tiltX * 0.55
+                 + Math.max(-5, Math.min(5, velY * 0.015));
+          fz = -5 + Math.sin(t * 0.17 + 1.7) * 4.5 + tiltY * 0.35;
+        }
+        carouselEl.style.transform =
+          "translateY(" + ((1 - wEase) * vh * 0.12).toFixed(1) + "px)" +
+          " rotateX(" + fx.toFixed(2) + "deg) rotateZ(" + fz.toFixed(2) + "deg)" +
+          " scale(" + (0.72 + 0.28 * wEase).toFixed(3) + ")";
+      }
+    } else {
+      wEase = 1;
     }
   }
   dragRot += dragVel * (dragging ? 0 : 1);
@@ -1205,9 +949,8 @@ function raf(now){
   tiltY += (tiltTY - tiltY) * 0.12;
   renderCarousel(wprog);
 
-  /* reveals + section flash */
+  /* reveals */
   if (frame % 4 === 0){
-    checkSection();
     for (var i = 0; i < revealEls.length; i++){
       if (!revealEls[i].done && curY + vh * 0.88 > revealEls[i].top){
         revealEls[i].el.classList.add("in");
@@ -1216,47 +959,6 @@ function raf(now){
     }
   }
 
-  /* three scene */
-  if (three){
-    var heroP = Math.max(0, Math.min(1, curY / vh));
-    three.mosaicU.uTime.value = t;
-    three.mosaicU.uScroll.value = curY;
-    three.wordU.uTime.value = t;
-    three.wordU.uWarp.value = 0.30 + heroP * 2.2;
-    var g = Math.min(1, Math.abs(velY) * 0.016);
-    three.wordU.uGlitch.value = Math.max(three.wordU.uGlitch.value * 0.9, g);
-    // fade wordmark + monogram out as hero scrolls away
-    var fade = Math.max(0, 1 - Math.max(0, heroP - 0.45) / 0.5);
-    three.wordU.uAlpha.value = wordAlphaBase * fade;
-    three.word.position.y = curY * 0.5;
-    three.mono.material.opacity = 0.55 * fade;
-    three.mono.position.y = -vh * 0.30 + curY * 0.32;
-
-    /* monogram spin follows scroll direction */
-    spinAxis.set(Math.sin(t * 0.31), Math.cos(t * 0.23), 0.5).normalize();
-    var spinDir = velY < -0.5 ? -1 : 1;
-    dq.setFromAxisAngle(spinAxis, spinDir * 0.0016 * dt * (1 + Math.min(3, Math.abs(velY) * 0.01)));
-    three.mono.quaternion.premultiply(dq);
-
-    three.renderer.render(three.scene, three.cam);
-  }
-
-  /* scroll telemetry panel */
-  if (frame % 2 === 0 && qdir){
-    var maxS = Math.max(1, docH - vh);
-    var pr = Math.max(0, Math.min(1, curY / maxS));
-    qdir.textContent = velY > 0.5 ? "DOWN" : velY < -0.5 ? "UP" : "IDLE";
-    qvel.textContent = Math.abs(velY).toFixed(1);
-    qpos.textContent = Math.round(pr * 100) + "%";
-    qsec.textContent = ["HERO", "WORKS", "ABOUT", "SKILLS", "CONTACT"][curSection] || "HERO";
-    var ang = pr * Math.PI * 2;
-    var tilt = Math.max(-0.7, Math.min(0.7, velY * 0.012));
-    var qScroll = mulQ(
-      { x: 0, y: Math.sin(tilt / 2), z: 0, w: Math.cos(tilt / 2) },
-      { x: Math.sin(ang / 2), y: 0, z: 0, w: Math.cos(ang / 2) }
-    );
-    drawGimbal(qScroll);
-  }
 }
 
 /* ---------- resize ---------- */
@@ -1266,8 +968,12 @@ addEventListener("resize", function(){
   rsT = setTimeout(function(){
     vw = innerWidth; vh = innerHeight;
     setRadius();
-    if (three) three.resize();
     measure();
+    /* mobile deck manages its own layout — clear desktop stage styles */
+    if (mobileWorks.matches){
+      if (worksPin) worksPin.style.opacity = "";
+      if (carouselEl) carouselEl.style.transform = "";
+    }
   }, 120);
 });
 
