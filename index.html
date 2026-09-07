@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amirthesh | Software Engineer, MS CS @ UNC Charlotte</title>
-<meta name="description" content="Portfolio of Amirtheshwaran Navaneethakrishnan (Amir), a software engineer pursuing his MS in Computer Science at UNC Charlotte. Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS.">
+<meta name="description" content="Portfolio of Amirtheshwaran Navaneethakrishnan (Amir), a software engineer pursuing his MS in Computer Science at UNC Charlotte. Full-stack and cloud infrastructure work built with Java, React, GCP, and Terraform.">
 <meta name="theme-color" content="#0b101b">
 <link rel="canonical" href="https://amirtheshwaran.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070c16'/%3E%3Cpath d='M14 52 L32 12 L50 52 M21.5 36 H42.5' stroke='%239ecbf0' stroke-width='4' fill='none'/%3E%3C/svg%3E">
@@ -12,14 +12,14 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amirtheshwaran.github.io/">
 <meta property="og:title" content="Amirthesh | Software Engineer, MS CS @ UNC Charlotte">
-<meta property="og:description" content="Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS. Currently an MS CS student at UNC Charlotte, open to SDE roles.">
+<meta property="og:description" content="Full-stack and cloud infrastructure work built with Java, React, GCP, and Terraform. Currently an MS CS student at UNC Charlotte, open to SDE roles.">
 <meta property="og:image" content="https://amirtheshwaran.github.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Amirthesh | Software Engineer, MS CS @ UNC Charlotte">
-<meta name="twitter:description" content="Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS.">
+<meta name="twitter:description" content="Full-stack and cloud infrastructure work built with Java, React, GCP, and Terraform.">
 <meta name="twitter:image" content="https://amirtheshwaran.github.io/og-image.png">
 
 <script type="application/ld+json">
@@ -388,6 +388,23 @@ a.wcard-tilt{color:inherit;cursor:pointer}
   .about-grid{grid-template-columns:1fr;gap:26px}
 }
 
+/* ================= experience ================= */
+#experience{padding:10vh 0 16vh}
+.xp-rows{padding:0 28px;max-width:1200px;margin:0 auto}
+.xp-row{
+  display:grid;grid-template-columns:150px 1fr;gap:20px;
+  padding:22px 0;border-bottom:1px solid var(--hair);
+}
+.xp-row:first-child{border-top:1px solid var(--hair)}
+.xp-when{font-size:10px;letter-spacing:.22em;color:var(--faint);padding-top:3px}
+.xp-main h3{
+  font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:.03em;color:var(--ink);
+  margin-bottom:8px;
+}
+.xp-main h3 span{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.04em;color:var(--dim)}
+.xp-main p{font-size:11.5px;line-height:1.7;color:var(--dim);max-width:74ch}
+@media (max-width:680px){.xp-row{grid-template-columns:1fr;gap:8px;padding:18px 0}}
+
 /* ================= skills ================= */
 #skills{padding:10vh 0 18vh}
 .skill-rows{padding:0 28px;max-width:1200px;margin:0 auto}
@@ -479,9 +496,10 @@ a.wcard-tilt{color:inherit;cursor:pointer}
   <ul class="nav-links">
     <li><a href="#works" data-goto="works">works</a></li>
     <li><a href="#about" data-goto="about">about</a></li>
+    <li><a href="#experience" data-goto="experience">experience</a></li>
     <li><a href="#skills" data-goto="skills">skills</a></li>
   </ul>
-  <a class="nav-cta magnetic" href="mailto:amirthesh14@gmail.com?subject=SDE%20role%2C%20resume%20request">Contact / Resume</a>
+  <a class="nav-cta magnetic" href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
 </nav>
 
 <!-- ================= page (virtual scroll) ================= -->
@@ -493,7 +511,7 @@ a.wcard-tilt{color:inherit;cursor:pointer}
     <div class="hero-meta">
       <span>SOFTWARE ENGINEER</span>
       <span><em>MS CS · UNC CHARLOTTE · MAY 2027</em></span>
-      <span><em>FULL-STACK / JAVA / REACT / AWS</em></span>
+      <span><em>FULL-STACK / CLOUD / JAVA / REACT</em></span>
     </div>
     <div class="hero-scroll">SCROLL</div>
     <div class="hero-jp">アミルテシュ<span>ソフトウェア エンジニア</span></div>
@@ -610,13 +628,45 @@ a.wcard-tilt{color:inherit;cursor:pointer}
       </div>
       <div class="about-body rv">
         <p><b>I go by Amir.</b> The full name is Amirtheshwaran Navaneethakrishnan. It doesn't fit on badges, so most things I make ship under a shorter name.</p>
-        <p>I'm doing my MS in Computer Science at <b>UNC Charlotte</b>, graduating May 2027, with a focus on backend systems and software that has to hold up under real load. Before that I did a BTech in AI &amp; ML from SRM IST Chennai, first class with distinction. In between there was an internship at Drata IT Solutions building Python APIs. Eight endpoints, three third party integrations, and a long tail of backend bugs that taught me more than the endpoints did.</p>
-        <p>Most of what I build is full stack: a Java or Python service underneath, a React front end on top, deployed on AWS or Firebase depending on what the project needs. I've shipped 15+ of these, from social apps to ML pipelines to computer vision, and I'd rather ship something smaller that stays up under real users than something bigger that only survives a demo. Still learning something new with most of what I build.</p>
+        <p>I'm doing my MS in Computer Science at <b>UNC Charlotte</b> (GPA 3.5), graduating May 2027, with a focus on backend systems and software that has to hold up under real load. Before that I did a BTech in AI &amp; ML from SRM IST Chennai, first class with distinction. In between there were two stretches at Drata IT Solutions, one on backend APIs and one on cloud infrastructure, plus a semester TAing frontend web development back at UNC Charlotte, on the other side of the classroom this time.</p>
+        <p>Most of what I build is full stack: a Java or Python service underneath, a React front end on top, deployed on GCP, AWS, or Firebase depending on what the project needs. I've shipped 15+ of these, from social apps to ML pipelines to computer vision, and I'd rather ship something smaller that stays up under real users than something bigger that only survives a demo. Still learning something new with most of what I build.</p>
         <p class="sig">// currently: SDE roles, high-impact teams</p>
         <div class="about-facts">
           <div class="fact"><b>15+</b><span>PROJECTS SHIPPED</span></div>
           <div class="fact"><b>02</b><span>DEGREES · BTECH AI/ML + MS CS</span></div>
-          <div class="fact"><b>50+</b><span>REAL USERS ON ANONU</span></div>
+          <div class="fact"><b>100+</b><span>REAL USERS ON ANONU</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" aria-label="Experience">
+    <div class="sec-head rv">
+      <span class="sec-no">03</span>
+      <h2>EXPERIENCE</h2>
+      <span class="sec-jp">経験</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="xp-rows rv">
+      <div class="xp-row">
+        <div class="xp-when">JUN 2026 — AUG 2026</div>
+        <div class="xp-main">
+          <h3>Cloud Infrastructure Intern <span>· Drata IT Solutions</span></h3>
+          <p>Deployed 8 containerized services across Compute Engine, GKE, Cloud Run, and Cloud SQL, packaging TypeScript and Bun apps as Docker images and cutting image size 35%. Provisioned VPCs, load balancers, and DNS for 3 environments in 2,000+ lines of Terraform, replacing a 2-day manual process with a 30-minute apply, and built the CI/CD pipeline that took deploys from 25 minutes to 10.</p>
+        </div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-when">AUG 2026 — PRESENT</div>
+        <div class="xp-main">
+          <h3>Teaching Assistant, Frontend Web Dev <span>· UNC Charlotte</span></h3>
+          <p>Hold office hours and grade labs for 118 students building sites with HTML, CSS, and JavaScript, working through their code to find and explain bugs.</p>
+        </div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-when">JUL 2024 — NOV 2024</div>
+        <div class="xp-main">
+          <h3>Software Engineer Intern, Backend <span>· Drata IT Solutions</span></h3>
+          <p>Owned 12 Python REST endpoints end to end, from schema design through integration with 3 third-party services, testing, and production deployment. Cut average SQL query time 40%, refactored 6 backend modules into shared components, and reviewed 20+ pull requests.</p>
         </div>
       </div>
     </div>
@@ -624,18 +674,18 @@ a.wcard-tilt{color:inherit;cursor:pointer}
 
   <section id="skills" aria-label="Skills">
     <div class="sec-head rv">
-      <span class="sec-no">03</span>
+      <span class="sec-no">04</span>
       <h2>SKILLS</h2>
       <span class="sec-jp">スキル</span>
       <span class="sec-rule"></span>
     </div>
     <div class="skill-rows rv">
-      <div class="skill-row"><span class="skill-cat">LANGUAGES</span><div class="skill-tags"><i>python</i><i>go</i><i>typescript</i><i>javascript</i><i>java</i><i>c_sharp</i><i>dart</i></div></div>
-      <div class="skill-row"><span class="skill-cat">WEB</span><div class="skill-tags"><i>react</i><i>next_js</i><i>spring_boot</i><i>three_js</i><i>node_js</i><i>fastapi</i><i>express</i></div></div>
+      <div class="skill-row"><span class="skill-cat">LANGUAGES</span><div class="skill-tags"><i>python</i><i>go</i><i>typescript</i><i>javascript</i><i>java</i><i>c_plus_plus</i><i>c_sharp</i><i>dart</i></div></div>
+      <div class="skill-row"><span class="skill-cat">WEB</span><div class="skill-tags"><i>react</i><i>next_js</i><i>spring_boot</i><i>django</i><i>three_js</i><i>node_js</i><i>bun</i><i>fastapi</i><i>express</i></div></div>
       <div class="skill-row"><span class="skill-cat">MOBILE</span><div class="skill-tags"><i>flutter</i><i>riverpod</i><i>react_native</i></div></div>
-      <div class="skill-row"><span class="skill-cat">DATA</span><div class="skill-tags"><i>postgresql</i><i>firebase</i><i>firestore</i><i>supabase</i><i>redis</i><i>mongodb</i></div></div>
+      <div class="skill-row"><span class="skill-cat">DATA</span><div class="skill-tags"><i>postgresql</i><i>mysql</i><i>firebase</i><i>firestore</i><i>supabase</i><i>redis</i><i>mongodb</i></div></div>
       <div class="skill-row"><span class="skill-cat">AI / ML</span><div class="skill-tags"><i>tensorflow</i><i>opencv</i><i>scikit_learn</i><i>gemini_api</i><i>groq</i></div></div>
-      <div class="skill-row"><span class="skill-cat">INFRA</span><div class="skill-tags"><i>aws</i><i>docker</i><i>github_pages</i><i>netlify</i><i>linux</i><i>git</i></div></div>
+      <div class="skill-row"><span class="skill-cat">CLOUD / INFRA</span><div class="skill-tags"><i>gcp</i><i>aws</i><i>kubernetes</i><i>docker</i><i>terraform</i><i>github_pages</i><i>netlify</i><i>linux</i><i>git</i></div></div>
     </div>
   </section>
 
@@ -647,6 +697,7 @@ a.wcard-tilt{color:inherit;cursor:pointer}
       <a class="magnetic" href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener"><b>gh /</b> github.com/Amirtheshwaran ↗</a>
       <a class="magnetic" href="https://www.linkedin.com/in/amirtheshn/" target="_blank" rel="noopener"><b>in /</b> linkedin.com/in/amirtheshn ↗</a>
       <a class="magnetic" href="mailto:amirthesh14@gmail.com"><b>mail /</b> amirthesh14@gmail.com ↗</a>
+      <a class="magnetic" href="resume.pdf" target="_blank" rel="noopener"><b>cv /</b> resume.pdf ↗</a>
     </div>
     <div class="foot-fine rv">
       <span>© 2026 AMIRTHESHWARAN NAVANEETHAKRISHNAN</span>
