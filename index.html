@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amirthesh | Software Engineer, MS CS @ UNC Charlotte</title>
-<meta name="description" content="Portfolio of Amirtheshwaran Navaneethakrishnan (Amir), a software engineer pursuing his MS in Computer Science at UNC Charlotte. Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS.">
+<title>Amirthesh | Software Engineer &amp; Game Developer, MS CS @ UNC Charlotte</title>
+<meta name="description" content="Portfolio of Amirtheshwaran Navaneethakrishnan (Amir), a software engineer and game developer pursuing his MS in Computer Science at UNC Charlotte. Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS.">
 <meta name="theme-color" content="#0b101b">
 <link rel="canonical" href="https://amirtheshwaran.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070c16'/%3E%3Cpath d='M14 52 L32 12 L50 52 M21.5 36 H42.5' stroke='%239ecbf0' stroke-width='4' fill='none'/%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://amirtheshwaran.github.io/">
-<meta property="og:title" content="Amirthesh | Software Engineer, MS CS @ UNC Charlotte">
-<meta property="og:description" content="Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS. Currently an MS CS student at UNC Charlotte, open to SDE roles.">
+<meta property="og:title" content="Amirthesh | Software Engineer &amp; Game Developer, MS CS @ UNC Charlotte">
+<meta property="og:description" content="Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS. Currently an MS CS student at UNC Charlotte, open to SDE and game development roles.">
 <meta property="og:image" content="https://amirtheshwaran.github.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Amirthesh | Software Engineer, MS CS @ UNC Charlotte">
-<meta name="twitter:description" content="Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS.">
+<meta name="twitter:title" content="Amirthesh | Software Engineer &amp; Game Developer, MS CS @ UNC Charlotte">
+<meta name="twitter:description" content="Full-stack, cloud, and ML projects built with Java, React, Spring Boot, and AWS. Also builds games in Unity and GameMaker.">
 <meta name="twitter:image" content="https://amirtheshwaran.github.io/og-image.png">
 
 <script type="application/ld+json">
@@ -29,11 +29,12 @@
   "name": "Amirtheshwaran Navaneethakrishnan",
   "alternateName": "Amir",
   "url": "https://amirtheshwaran.github.io/",
-  "jobTitle": "Software Engineer",
+  "jobTitle": ["Software Engineer", "Game Developer"],
   "email": "mailto:amirthesh14@gmail.com",
   "sameAs": [
     "https://github.com/Amirtheshwaran",
-    "https://www.linkedin.com/in/amirtheshn/"
+    "https://www.linkedin.com/in/amirtheshn/",
+    "https://amirtheshwaran.github.io/gamedev/"
   ],
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "UNC Charlotte" },
@@ -439,6 +440,13 @@ a.wcard-tilt{color:inherit;cursor:pointer}
   margin-top:44px;font-size:9.5px;letter-spacing:.2em;color:var(--faint);
 }
 
+.inline-link{
+  color:var(--blue-glow);
+  border-bottom:1px solid rgba(158,203,240,.35);
+  transition:border-color .25s;
+}
+.inline-link:hover{border-color:var(--blue-glow)}
+
 /* ================= magnetic ================= */
 .magnetic{transition:transform .35s cubic-bezier(.22,.61,.36,1)}
 .nav-cta.magnetic{transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .3s,background .3s,color .3s}
@@ -456,7 +464,7 @@ a.wcard-tilt{color:inherit;cursor:pointer}
 
 </head>
 <body>
-<h1 class="visually-hidden">Amirthesh, Amirtheshwaran Navaneethakrishnan. Software engineer, MS Computer Science at UNC Charlotte.</h1>
+<h1 class="visually-hidden">Amirthesh, Amirtheshwaran Navaneethakrishnan. Software engineer and game developer, MS Computer Science at UNC Charlotte.</h1>
 
 <!-- ================= intro veil ================= -->
 <div id="intro" aria-hidden="true">
@@ -491,9 +499,9 @@ a.wcard-tilt{color:inherit;cursor:pointer}
     <div class="hero-art" aria-hidden="true"></div>
     <div class="hero-name" aria-hidden="true">AMIRTHESH</div>
     <div class="hero-meta">
-      <span>SOFTWARE ENGINEER</span>
+      <span>SOFTWARE ENGINEER / GAME DEV</span>
       <span><em>MS CS · UNC CHARLOTTE · MAY 2027</em></span>
-      <span><em>FULL-STACK / JAVA / REACT / AWS</em></span>
+      <span><em>FULL-STACK / JAVA / REACT / UNITY / AWS</em></span>
     </div>
     <div class="hero-scroll">SCROLL</div>
     <div class="hero-jp">アミルテシュ<span>ソフトウェア エンジニア</span></div>
@@ -514,8 +522,8 @@ a.wcard-tilt{color:inherit;cursor:pointer}
               <div class="wcard-body">
                 <span class="wcard-date">2026 · SHIPPED</span>
                 <h3 class="wcard-title">ANONU</h3>
-                <p class="wcard-desc">Campus microblog built in Flutter with Firebase for auth, Firestore, and storage. Posts can go out anonymous or under your name, per post, and every post carries an expiry from one hour to 48 hours so the feed doesn't turn into a permanent record. Firestore and Storage security rules handle access control instead of a custom backend, and moderation runs through a reports queue rather than pre-screening every post. Around 50 to 100 people use it every day.</p>
-                <div class="wcard-tags"><i>flutter</i><i>riverpod</i><i>firestore</i></div>
+                <p class="wcard-desc">Campus microblog built in React Native with Firebase for auth, Firestore, and storage. Posts can go out anonymous or under your name, per post, and every post carries an expiry from one hour to 48 hours so the feed doesn't turn into a permanent record. Firestore and Storage security rules handle access control instead of a custom backend, and moderation runs through a reports queue rather than pre-screening every post. Around 50 to 100 people use it every day.</p>
+                <div class="wcard-tags"><i>react_native</i><i>firebase</i><i>firestore</i></div>
                 <span class="wcard-link">VIEW PROJECT ↗</span>
               </div>
             </a>
@@ -604,15 +612,16 @@ a.wcard-tilt{color:inherit;cursor:pointer}
         <b>AMIRTHESHWARAN NAVANEETHAKRISHNAN</b>
         <span>B. CHENNAI, IN</span>
         <span>NOW / CHARLOTTE, NC</span>
-        <span>STATUS / OPEN TO SDE ROLES</span>
+        <span>STATUS / OPEN TO SDE + GAME DEV ROLES</span>
         <span>AVAILABLE / MAY 2027 · SOONER FOR REMOTE</span>
         <span class="about-art" aria-hidden="true"></span>
       </div>
       <div class="about-body rv">
         <p><b>I go by Amir.</b> The full name is Amirtheshwaran Navaneethakrishnan. It doesn't fit on badges, so most things I make ship under a shorter name.</p>
-        <p>I'm doing my MS in Computer Science at <b>UNC Charlotte</b>, graduating May 2027, with a focus on backend systems and software that has to hold up under real load. Before that I did a BTech in AI &amp; ML from SRM IST Chennai, first class with distinction. In between there was an internship at Drata IT Solutions building Python APIs. Eight endpoints, three third party integrations, and a long tail of backend bugs that taught me more than the endpoints did.</p>
+        <p>I'm doing my MS in Computer Science at <b>UNC Charlotte</b>, graduating May 2027, with a focus on backend systems and software that has to hold up under real load. Before that I did a BTech in AI &amp; ML from SRM IST Chennai, first class with distinction. In between there was an internship at Drata IT Solutions building Python APIs. 12 endpoints, three third party integrations, and a long tail of backend bugs that taught me more than the endpoints did. I went back to Drata this past summer, June to August 2026, as a Cloud Infrastructure Intern, this time on the other side of the deploy: workloads on GKE and Cloud Run, Terraform for the infrastructure, and the CI/CD that ships it.</p>
         <p>Most of what I build is full stack: a Java or Python service underneath, a React front end on top, deployed on AWS or Firebase depending on what the project needs. I've shipped 15+ of these, from social apps to ML pipelines to computer vision, and I'd rather ship something smaller that stays up under real users than something bigger that only survives a demo. Still learning something new with most of what I build.</p>
-        <p class="sig">// currently: SDE roles, high-impact teams</p>
+        <p>Games are the other half of it. Unity and GameMaker mostly, solo or in small teams, and right now that's <b>Service</b>, a first-person horror game I'm building alone. That work lives on its own site, <a class="inline-link" href="https://amirtheshwaran.github.io/gamedev/" target="_blank" rel="noopener">the game dev portfolio</a>, since it wants a different shelf than the backend work.</p>
+        <p class="sig">// currently: SDE and game dev roles, high-impact teams</p>
         <div class="about-facts">
           <div class="fact"><b>15+</b><span>PROJECTS SHIPPED</span></div>
           <div class="fact"><b>02</b><span>DEGREES · BTECH AI/ML + MS CS</span></div>
@@ -630,7 +639,8 @@ a.wcard-tilt{color:inherit;cursor:pointer}
       <span class="sec-rule"></span>
     </div>
     <div class="skill-rows rv">
-      <div class="skill-row"><span class="skill-cat">LANGUAGES</span><div class="skill-tags"><i>python</i><i>go</i><i>typescript</i><i>javascript</i><i>java</i><i>c_sharp</i><i>dart</i></div></div>
+      <div class="skill-row"><span class="skill-cat">LANGUAGES</span><div class="skill-tags"><i>python</i><i>go</i><i>typescript</i><i>javascript</i><i>java</i><i>c_plus_plus</i><i>c_sharp</i><i>dart</i></div></div>
+      <div class="skill-row"><span class="skill-cat">GAMES</span><div class="skill-tags"><i>c_plus_plus</i><i>c_sharp</i><i>unity</i><i>unreal_engine_5</i><i>gamemaker</i><i>glsl</i><i>hlsl</i></div></div>
       <div class="skill-row"><span class="skill-cat">WEB</span><div class="skill-tags"><i>react</i><i>next_js</i><i>spring_boot</i><i>three_js</i><i>node_js</i><i>fastapi</i><i>express</i></div></div>
       <div class="skill-row"><span class="skill-cat">MOBILE</span><div class="skill-tags"><i>flutter</i><i>riverpod</i><i>react_native</i></div></div>
       <div class="skill-row"><span class="skill-cat">DATA</span><div class="skill-tags"><i>postgresql</i><i>firebase</i><i>firestore</i><i>supabase</i><i>redis</i><i>mongodb</i></div></div>
@@ -647,6 +657,7 @@ a.wcard-tilt{color:inherit;cursor:pointer}
       <a class="magnetic" href="https://github.com/Amirtheshwaran" target="_blank" rel="noopener"><b>gh /</b> github.com/Amirtheshwaran ↗</a>
       <a class="magnetic" href="https://www.linkedin.com/in/amirtheshn/" target="_blank" rel="noopener"><b>in /</b> linkedin.com/in/amirtheshn ↗</a>
       <a class="magnetic" href="mailto:amirthesh14@gmail.com"><b>mail /</b> amirthesh14@gmail.com ↗</a>
+      <a class="magnetic" href="https://amirtheshwaran.github.io/gamedev/" target="_blank" rel="noopener"><b>games /</b> game dev portfolio ↗</a>
       <a class="magnetic" href="resume.pdf" target="_blank" rel="noopener"><b>cv /</b> resume.pdf ↗</a>
     </div>
     <div class="foot-fine rv">
